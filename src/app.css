@@ -1,0 +1,24 @@
+main > .container {
+  padding-top: 80px
+}
+
+header > nav.navbar {
+  border-bottom: 1.5px solid #999;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+footer.footer {
+  border-top: 1.5px solid #999;
+}
+
+span.emoji {
+  display: inline-block;
+}
+
+span.emoji > img.emoji {
+  height: auto;
+  width: 1.5rem;
+}
