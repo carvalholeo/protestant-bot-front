@@ -7,6 +7,7 @@ import PrivacyPolicy from '../pages/PrivacyPolicy';
 import ReleaseNotes from '../pages/ReleaseNotes';
 import BlockManager from '../pages/BlockManager';
 import Contact from '../pages/Contact';
+import Error404 from '../pages/Errors/404';
 
 function Routes() {
   return (
@@ -18,6 +19,8 @@ function Routes() {
         <Route path='/privacy' component={PrivacyPolicy} />
         <Route path='/block-manager' component={BlockManager} />
         <Route path='/contact' component={Contact} />
+
+        <Route component={Error404} />
       </Switch>
     </Router>
   )
