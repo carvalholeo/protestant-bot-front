@@ -6,7 +6,7 @@ header > nav.navbar {
   border-bottom: 1.5px solid #999;
 }
 
-html {
+* {
   scroll-behavior: smooth;
 }
 
