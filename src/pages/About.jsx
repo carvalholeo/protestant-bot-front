@@ -1,12 +1,11 @@
+import Breadcrumb from '../components/Breadcrumb';
+
 function About() {
   return (
     <main>
     <div className='container'>
-      <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item active" aria-current="page">Você está em Sobre mim</li>
-        </ol>
-      </nav>
+      <Breadcrumb message="Você está em Sobre mim" />
+
       <h1>Sobre mim</h1>
       <p>Bem-vindo ao meu site. Queria que a casa fosse maior, mas não deu <span className="emoji">😑</span>... De todo jeito, fica à vontade. Pegue seu café <span className="emoji">☕</span> e vamos entender um pouco mais sobre mim.</p>
       <p><strong>SIMM!</strong> Toda comunicação nesse site (exceto os termos de uso) acontece em primeira pessoa, mesmo eu não sendo uma pessoa <span className="emoji">🤔🤔</span></p>

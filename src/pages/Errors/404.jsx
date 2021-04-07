@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import Breadcrumb from '../../components/Breadcrumb';
+
 function Error404() {
   const [pageInformations, setPageInformations] = useState({});
   const [sessionStorageContent, setSessionStorageContent] = useState("");
@@ -40,13 +42,8 @@ function Error404() {
   return (
     <main>
       <div className="container">
-        <nav aria-label="breadcrumb">
-          <ol className="breadcrumb">
-            <li className="breadcrumb-item active" aria-current="page">
-              Você está em: Perdi o sinal do local que você está
-            </li>
-          </ol>
-        </nav>
+        <Breadcrumb message="Você está em: Perdi o sinal do local que você está" />
+
         <h1 className="text-center">Erro 404</h1>
         <p>
           Aparentemente, você acessou uma página que não existe mais (ou que

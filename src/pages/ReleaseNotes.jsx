@@ -1,12 +1,10 @@
+import Breadcrumb from '../components/Breadcrumb';
+
 function ReleaseNotes() {
   return (
     <main>
     <div className='container'>
-      <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item active" aria-current="page">Você está em Histórico das Versões</li>
-        </ol>
-      </nav>
+      <Breadcrumb message="Você está em Histórico das Versões" />
       <h1>Histórico de versões - Release Notes</h1>
 
       <h2>Histórico do site</h2>

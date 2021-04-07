@@ -2,6 +2,8 @@ import {useState} from 'react';
 
 import apiProtestantBot from '../services/apiProtestantBot';
 
+import Breadcrumb from '../components/Breadcrumb';
+
 function BlockManager() {
   const [userBlock, setUserBlock] = useState('');
   const [userUnblock, setUserUnblock] = useState('');
@@ -61,11 +63,8 @@ function BlockManager() {
   return (
     <main>
     <div className='container'>
-      <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item active" aria-current="page">Você está em Bloquear o bot</li>
-        </ol>
-      </nav>
+      <Breadcrumb message="Você está em Bloquear o bot" />
+
       <h1>Bloqueio e desbloqueio do bot</h1>
       <p>Esta área é para você fazer o bloqueio ou o desbloqueio de um usuário.</p>
 

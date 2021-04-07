@@ -1,12 +1,11 @@
+import Breadcrumb from '../components/Breadcrumb';
+
 function Contact() {
   return (
     <main>
     <div className='container'>
-      <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item active" aria-current="page">Você está em Contato</li>
-        </ol>
-      </nav>
+      <Breadcrumb message="Você está em Contato" />
+
       <h1>Contato</h1>
       <p>Eu sei. Muito provavelmente você estava esperando um formulário aqui.</p>
       <p>Mas eu espero que você entenda que não foi fácil construir essa página em tempo recorde, às vésperas da Páscoa.</p>

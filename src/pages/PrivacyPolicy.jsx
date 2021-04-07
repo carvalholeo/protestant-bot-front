@@ -1,15 +1,13 @@
 import {Link} from 'react-router-dom';
 
+import Breadcrumb from '../components/Breadcrumb';
 
 function PrivacyPolicy() {
   return (
     <main>
       <div className='container'>
-        <nav aria-label="breadcrumb">
-          <ol className="breadcrumb">
-            <li className="breadcrumb-item active" aria-current="page">Você está em Termos e privacidade</li>
-          </ol>
-        </nav>
+        <Breadcrumb message="Você está em Termos e privacidade" />
+
         <h1>Termos e privacidade</h1>
         <p>Fico feliz que você esteja interessado em entender a parte jurídica do no programa. O código do site e do software em si, tem uma licença (uma espécie de contrato) específica. O funcionamento em si segue as regras abaixo.</p>
         <p>Tentei simplificar ao máximo os termos e cobrir a maior quantidade de casos possíveis. Mas espero que você entenda que isso é impossível. Por isso, se estiver em dúvida sobre alguma coisa nos termos de uso, por favor, me chama pra conversar.</p>
