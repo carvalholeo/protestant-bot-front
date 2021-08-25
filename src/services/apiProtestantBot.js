@@ -1,8 +1,7 @@
 import axios from 'axios';
-import env from 'react-dotenv';
 
 const apiProtestantBot = axios.create({
-  baseURL: env.PROTESTANTBOT_API_URL
+  baseURL: process.env.REACT_APP_PROTESTANTBOT_API_URL
 });
 
 export default apiProtestantBot;
