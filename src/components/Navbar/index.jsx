@@ -29,11 +29,11 @@ function Navbar() {
                   Sobre mim
                 </Link>
               </li>
-              {/* <li className="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to="/block-manager">
                   Bloquear o bot
                 </Link>
-              </li> */}
+              </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">
                   Contato

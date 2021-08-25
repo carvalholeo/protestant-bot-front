@@ -1,11 +1,13 @@
 import { lazy, Suspense } from "react";
 
 import Loading from "../components/Loading";
+import analytics from '../services/analytics';
 
 const Twemoji = lazy(() => import("react-twemoji"));
 const Breadcrumb = lazy(() => import("../components/Breadcrumb"));
 
 function About() {
+  analytics()
   return (
     <Suspense fallback={<Loading message="Carregando dados..." />}>
       <Twemoji options={{ className: "emoji" }}>

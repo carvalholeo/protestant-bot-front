@@ -1,6 +1,8 @@
 import Breadcrumb from '../components/Breadcrumb';
+import analytics from '../services/analytics';
 
 function Contact() {
+  analytics();
   return (
     <main>
     <div className='container'>

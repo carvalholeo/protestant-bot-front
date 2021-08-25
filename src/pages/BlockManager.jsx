@@ -1,10 +1,12 @@
 import {useState} from 'react';
 
 import apiProtestantBot from '../services/apiProtestantBot';
+import analytics from '../services/analytics';
 
 import Breadcrumb from '../components/Breadcrumb';
 
 function BlockManager() {
+  analytics();
   const [userBlock, setUserBlock] = useState('');
   const [userUnblock, setUserUnblock] = useState('');
 
@@ -21,6 +23,11 @@ function BlockManager() {
 
   async function handleBlock(event) {
     event.preventDefault();
+
+    if(userBlock === '') {
+      window.alert('Você precisa preencher um usuário para ser bloqueado.');
+      return;
+    }
 
     const confirmation = window.confirm('Você tem certeza que deseja BLOQUEAR o bot?');
 
@@ -45,11 +52,16 @@ function BlockManager() {
   async function handleUnblock(event) {
     event.preventDefault();
 
+    if(userUnblock === '') {
+      window.alert('Você precisa preencher um usuário para ser desbloqueado.');
+      return;
+    }
+
     const data = {
       user: userUnblock
     };
 
-    await apiProtestantBot.post('/blocklist/unblock', data)
+    await apiProtestantBot.put('/blocklist/unblock', data)
         .then(() => {
           alert(`Usuário @${userUnblock} foi desbloqueado com sucesso. Seja bem-vindx de volta!`);
           setUserUnblock('');

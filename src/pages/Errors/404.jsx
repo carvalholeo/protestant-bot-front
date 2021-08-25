@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Breadcrumb from '../../components/Breadcrumb';
+import analytics from '../../services/analytics';
 
 function Error404() {
+  analytics();
   const [pageInformations, setPageInformations] = useState({});
   const [sessionStorageContent, setSessionStorageContent] = useState("");
   const [localStorageContent, setLocalStorageContent] = useState("");

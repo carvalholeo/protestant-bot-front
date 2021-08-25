@@ -1,8 +1,10 @@
 import {Link} from 'react-router-dom';
 
 import Breadcrumb from '../components/Breadcrumb';
+import analytics from '../services/analytics';
 
 function PrivacyPolicy() {
+  analytics();
   return (
     <main>
       <div className='container'>
