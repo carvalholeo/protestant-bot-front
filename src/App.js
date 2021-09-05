@@ -1,5 +1,6 @@
 import { Suspense, lazy } from 'react';
 
+import 'bootstrap/dist/css/bootstrap.css';
 import './app.css';
 
 import Loading from './components/Loading';
