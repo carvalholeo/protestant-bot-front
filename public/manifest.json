@@ -1,11 +1,13 @@
 {
-  "short_name": "Protestant Bot",
-  "name": "Protestant Bot App",
+  "short_name": "BotLutero",
+  "name": "Bot Lutero: O bot da Reforma Protestante",
+  "lang": "pt-BR",
+  "dir": "ltr",
   "description": "App para gerenciar o bot Protestant Bot, que retweeta conteúdo cristão na conta @BotLutero no Twitter.",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "64x64",
       "type": "image/x-icon"
     },
     {
@@ -19,7 +21,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "categories": ["social", "religion", "lifestyle"],
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
