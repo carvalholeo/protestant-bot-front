@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-import * as serviceWorkerRegistration from './lib/serviceWorker/serviceWorkerRegistration';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './lib/reportWebVitals';
 
 ReactDOM.render(
