@@ -75,7 +75,7 @@ function BlockManager() {
   return (
     <main>
     <div className='container'>
-      <Breadcrumb message="Você está em Bloquear o bot" />
+      <Breadcrumb message="Bloquear o bot" />
 
       <h1>Bloqueio e desbloqueio do bot</h1>
       <p>Esta área é para você fazer o bloqueio ou o desbloqueio de um usuário.</p>

@@ -8,7 +8,7 @@ function PrivacyPolicy() {
   return (
     <main>
       <div className='container'>
-        <Breadcrumb message="Você está em Termos e privacidade" />
+        <Breadcrumb message="Termos e privacidade" />
 
         <h1>Termos e privacidade</h1>
         <p>Fico feliz que você esteja interessado em entender a parte jurídica do no programa. O código do site e do software em si, tem uma licença (uma espécie de contrato) específica. O funcionamento em si segue as regras abaixo.</p>

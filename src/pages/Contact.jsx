@@ -6,7 +6,7 @@ function Contact() {
   return (
     <main>
     <div className='container'>
-      <Breadcrumb message="Você está em Contato" />
+      <Breadcrumb message="Contato" />
 
       <h1>Contato</h1>
       <p>Eu sei. Muito provavelmente você estava esperando um formulário aqui.</p>

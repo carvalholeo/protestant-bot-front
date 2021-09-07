@@ -13,7 +13,7 @@ function About() {
       <Twemoji options={{ className: "emoji" }}>
         <main>
           <div className="container">
-            <Breadcrumb message="Você está em Sobre mim" />
+            <Breadcrumb message="Sobre mim" />
 
             <h1>Sobre mim</h1>
             <p>

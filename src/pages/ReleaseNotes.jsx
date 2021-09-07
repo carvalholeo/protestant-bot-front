@@ -6,7 +6,7 @@ function ReleaseNotes() {
   return (
     <main>
     <div className='container'>
-      <Breadcrumb message="Você está em Histórico das Versões" />
+      <Breadcrumb message="Histórico das Versões" />
       <h1>Histórico de versões - Release Notes</h1>
 
       <p>Nesta página, você encontra todas as informações sobre atualizações realizadas no sistema. Mais detalhes podem ser obtidos abaixo nos títulos das seções abaixo, que levará ao acesso do código-fonte e seu histórico detalhado.</p>

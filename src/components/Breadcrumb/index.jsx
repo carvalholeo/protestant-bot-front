@@ -3,7 +3,7 @@ function Breadcrumb({message}) {
     <nav aria-label="breadcrumb">
       <ol className="breadcrumb">
         <li className="breadcrumb-item active" aria-current="page">
-          {message}
+          Você está em {message}
         </li>
       </ol>
     </nav>
