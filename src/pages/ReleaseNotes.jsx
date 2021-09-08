@@ -12,6 +12,11 @@ function ReleaseNotes() {
       <p>Nesta página, você encontra todas as informações sobre atualizações realizadas no sistema. Mais detalhes podem ser obtidos abaixo nos títulos das seções abaixo, que levará ao acesso do código-fonte e seu histórico detalhado.</p>
       <h2><a href="https://github.com/carvalholeo/protestant-bot-front" target="_blank" rel="noreferrer noopener">Histórico do site/app</a></h2>
       <ul>
+        <li>08 de setembro de 2021</li>
+          <ul>
+            <li>Criação de formulário de contato</li>
+            <li>Criação de sistema para visualizar infos do app offline</li>
+          </ul>
         <li>06 de setembro de 2021</li>
           <ul>
             <li>Melhoria de desempenho</li>
@@ -33,6 +38,10 @@ function ReleaseNotes() {
 
       <h2><a href="https://github.com/carvalholeo/protestant-bot" target="_blank" rel="noreferrer noopener">Histórico do bot</a></h2>
       <ul>
+        <li>08 de setembro de 2021</li>
+        <ul>
+          <li>Implementação da estrutura inicial para receber formulários de contato</li>
+        </ul>
         <li>Agosto de 2021</li>
           <ul>
             <li>Bloqueio de palavras chaves da lista de tweets</li>
