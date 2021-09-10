@@ -37,16 +37,16 @@ function About() {
 
             <h2>História</h2>
             <p>
-              Eu sou uma criação do Léo Carvalho, desenvolvedor backend em
-              Javascript e PHP. Nasci por volta do dia 30 de outubro de 2020 (o
+              Eu sou uma criação do Léo Carvalho, desenvolvedor back-end em
+              JavaScript e PHP. Nasci por volta do dia 30 de outubro de 2020 (o
               ano que não acabou), após uma ideia de um seguidor mutual do Léo,
               um pouco antes das comemorações da Reforma Protestante (que
               acontecem todo dia 31 de outubro).
             </p>
             <p>
               Em 2020, a Reforma completou 503 e a ideia era dar RT em todas as
-              contas que citassem alguma coisa da Reforma Protestante, como
-              forma de comemorar.
+              contas que citassem algo da Reforma Protestante, como
+              jeito de comemorar.
             </p>
             <p>Essa ideia veio por 2 motivos:</p>
             <ol>
@@ -68,21 +68,21 @@ function About() {
             </picture>
             <p>
               Fui criado às pressas e os primeiros tweets foram retweetados na
-              conta do meu criador ainda na madrugada do dia 31/10/2021 (que
+              conta do meu criador ainda na madrugada do dia 31/10/2020 (que
               foram sendo apagadas, para não misturar com outros conteúdos dele,
               a maioria de política e tecnologia, além de reclamações em geral).
             </p>
             <p>
-              Por causa da demora do Twitter em liberar as minhas senhas do
+              Pela demora do Twitter em liberar as minhas senhas do
               sistema pra retweetar no meu perfil, eu só pude começar de forma
-              automatizada no dia 03/11/2021, ou seja, 3 dias após o Dia do
+              automatizada no dia 03/11/2020, ou seja, 3 dias após o Dia do
               Protesto <span className="emoji">🤡🤡</span>
             </p>
             <p>
               E pra não fazer jus à fama do brasileiro, meu criador preparou
               tudo em fevereiro, com muuuuuiiiiitaaa antecedência, para quando
               chegar o dia, esteja tudo pronto e possamos apenas dizer "VIVA A
-              REFORMA!! <span className="emoji">🎉🎊🥳</span>
+              REFORMA!!" <span className="emoji">🎉🎊🥳</span>
             </p>
             <p>
               Na minha conta, você não consegue mandar DM e o meu criador não
@@ -93,13 +93,13 @@ function About() {
             </p>
             <p>
               P.S. 1: a criadora do Luterinho tem conta no Twitter, mas como
-              sempre, meu criador não lembra quem são e esqueceu de anotar. Se
+              sempre, meu criador não lembra quem é e esqueceu de anotar. Se
               você vir esta página, por favor, manifeste-se para receber os
               devidos créditos!
             </p>
             <p>
               P.S. 2: a pessoa que teve a ideia da minha criação é o JM Teodoro.
-              Ele é artista e estudante de TI. Acessem o perfil dele no{" "}
+              Ele é artista e estudante de TI. Acessem os perfis dele, no{" "}
               <a
                 href="https://twitter.com/JM_SCTeodoro"
                 target="_blank"
@@ -125,14 +125,14 @@ function About() {
               <Link to="/releasenotes" className="link-light">históricos de versões.</Link>
             </p>
             <p>
-              P.S. 4: Se você gostou da ideia, considere apoiar meu criador com
+              P.S. 4: se você gostou da ideia, considere apoiar meu criador com
               outras e sugestões de melhoria para mim também. Ele vai ficar
               feliz em saber sua opinião. Também considere apoiar
               financeiramente. Me manter no ar não é barato{" "}
               <span className="emoji">💅🏽</span> e ele teve que desligar outros
               projetos temporariamente para poder me ativar.
             </p>
-            <p>PS 5: Meu criador quer! #PlayStation5</p>
+            <p>PS 5: meu criador quer! #PlayStation5</p>
 
             <h3>Como eu funciono?</h3>
             <p>
@@ -141,7 +141,7 @@ function About() {
               critérios{" "}
               <small>
                 (que só funciona quando meu criador resolve pagar o cartão e
-                ligar meu servidor <span className="emoji">😠😡</span> )
+                ligar meu servidor <span className="emoji">😠😡</span>)
               </small>
               .
             </p>
