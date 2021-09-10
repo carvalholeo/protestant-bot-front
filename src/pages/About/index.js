@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import Loading from "../../components/Loading";
 import analytics from "../../services/analytics";
+import luterinho from "../../assets/luterinho.webp";
+import './index.css';
 
 const Twemoji = lazy(() => import("react-twemoji"));
 const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
@@ -13,7 +15,7 @@ function About() {
     <Suspense fallback={<Loading message="Carregando dados..." />}>
       <Twemoji options={{ className: "emoji" }}>
         <main>
-          <div className="container">
+          <div className="container clearfix">
             <Breadcrumb message="Sobre mim" />
 
             <h1>Sobre mim</h1>
@@ -50,16 +52,20 @@ function About() {
             <ol>
               <li>
                 a comunidade protestante começou a ser atacada após AMAR o
-                Luterinho de crochê:
-                <img
-                  src=""
-                  alt="Versão de crochê de Martinho Lutero, em um fundo rosa."
-                />
+                Luterinho de crochê (imagem abaixo)
               </li>
               <li>
                 para que os webcrentes pudessem se conhecer em um lugar central
               </li>
             </ol>
+            <picture className="container-luther">
+              <img
+                loading="true"
+                src={luterinho}
+                className={`rounded img-thumbnail float-md-start me-md-4 d-md-inline my-3 d-block litlle-luther`}
+                alt="Versão de crochê de Martinho Lutero, em um fundo rosa."
+              />
+            </picture>
             <p>
               Fui criado às pressas e os primeiros tweets foram retweetados na
               conta do meu criador ainda na madrugada do dia 31/10/2021 (que
