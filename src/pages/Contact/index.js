@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import Toast from "bootstrap/js/src/toast";
+import { useState } from "react";
 
 import api from "../../services/apiProtestantBot";
 import Breadcrumb from "../../components/Breadcrumb";
+import NotificationToast from "../../components/NotificationToast";
 import analytics from "../../services/analytics";
 
 function Contact() {
@@ -13,13 +13,7 @@ function Contact() {
   const [message, setMessage] = useState("");
   const [size, setSize] = useState(0);
   const [apiResponse, setApiResponse] = useState({});
-  const [toast, setToast] = useState(new Toast());
-
-  useEffect(() => {
-    const toastLive = document.getElementById("liveToast");
-    const toast = new Toast(toastLive);
-    setToast(toast);
-  }, []);
+  const [show, setShow] = useState(false);
 
   function handleTwitter(event) {
     const inputDirty = event.target.value;
@@ -69,6 +63,7 @@ function Contact() {
           className: "success",
           message: "Seu contato foi enviado com sucesso!",
         });
+        setShow(true);
         setName("");
         setTwitter("");
         setEmail("");
@@ -82,9 +77,8 @@ function Contact() {
           className: "danger",
           message: `Tivemos um problema pra registrar seu contato. Tudo que este app sabe é: "${error.message}". Por gentileza, tente novamente.`,
         });
-      })
-      .finally(() => toast.show());
-
+        setShow(true);
+      });
   }
 
   return (
@@ -164,30 +158,9 @@ function Contact() {
             </button>
             <button className="btn btn-success col-5">Enviar</button>
           </div>
-          <div className="position-relative">
-            <div className="toast-container position-absolute bottom-0 end-0 pb-3">
-              <div
-                className={`toast bg-${apiResponse.className}`}
-                role="alert"
-                aria-live="assertive"
-                aria-atomic="true"
-                id="liveToast"
-                data-bs-autohide="false"
-              >
-                <div className="toast-header">
-                  <strong className="me-auto">{apiResponse.title}</strong>
-                  <small>{apiResponse.time}</small>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="toast"
-                    aria-label="Fechar"
-                  ></button>
-                </div>
-                <div className="toast-body">{apiResponse.message}</div>
-              </div>
-            </div>
-          </div>
+            {show && (
+              <NotificationToast data={apiResponse} autoHide="false" />
+            )}
         </form>
       </div>
     </main>
