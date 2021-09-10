@@ -1,5 +1,5 @@
-import Breadcrumb from '../components/Breadcrumb';
-import analytics from '../services/analytics';
+import Breadcrumb from '../../components/Breadcrumb';
+import analytics from '../../services/analytics';
 
 function ReleaseNotes() {
   analytics();

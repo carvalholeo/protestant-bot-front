@@ -1,9 +1,9 @@
 import {useState} from 'react';
 
-import apiProtestantBot from '../services/apiProtestantBot';
-import analytics from '../services/analytics';
+import apiProtestantBot from '../../services/apiProtestantBot';
+import analytics from '../../services/analytics';
 
-import Breadcrumb from '../components/Breadcrumb';
+import Breadcrumb from '../../components/Breadcrumb';
 
 function BlockManager() {
   analytics();

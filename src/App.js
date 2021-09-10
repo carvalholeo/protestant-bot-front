@@ -5,7 +5,7 @@ import './app.css';
 
 import Loading from './components/Loading';
 
-const Routes = lazy(() => import('./routes/routes'));
+const Routes = lazy(() => import('./routes'));
 const Footer = lazy(() => import('./components/Footer'));
 
 function App() {

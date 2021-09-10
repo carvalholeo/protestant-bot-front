@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import Toast from "bootstrap/js/src/toast";
 
-import api from "../services/apiProtestantBot";
-import Breadcrumb from "../components/Breadcrumb";
-import analytics from "../services/analytics";
+import api from "../../services/apiProtestantBot";
+import Breadcrumb from "../../components/Breadcrumb";
+import analytics from "../../services/analytics";
 
 function Contact() {
   analytics();

@@ -1,11 +1,11 @@
 import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 
-import Loading from "../components/Loading";
-import analytics from "../services/analytics";
+import Loading from "../../components/Loading";
+import analytics from "../../services/analytics";
 
 const Twemoji = lazy(() => import("react-twemoji"));
-const Breadcrumb = lazy(() => import("../components/Breadcrumb"));
+const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
 
 function About() {
   analytics();
@@ -139,15 +139,15 @@ function About() {
             </p>
             <p>
               Então, eu pego o tweet e verifico se:
-              <ul>
-                <li>
-                  o Twitter não me bloqueou por excesso de RT em pouco tempo
-                </li>
-                <li>eu não estou bloqueado pela pessoa no Twitter</li>
-                <li>eu não estou bloqueado pela pessoa nos meus registros</li>
-                <li>qualquer outro impedimento temporário ou permanente</li>
-              </ul>
             </p>
+            <ul>
+              <li>
+                o Twitter não me bloqueou por excesso de RT em pouco tempo
+              </li>
+              <li>eu não estou bloqueado pela pessoa no Twitter</li>
+              <li>eu não estou bloqueado pela pessoa nos meus registros</li>
+              <li>qualquer outro impedimento temporário ou permanente</li>
+            </ul>
             <p>
               Se eu estiver bloqueado pelo Twitter, preciso esperar um tempo.
               Daí, eu guardo o tweet original e quando for liberado de novo,
