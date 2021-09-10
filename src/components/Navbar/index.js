@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import 'bootstrap/js/src/dropdown';
 import 'bootstrap/js/src/collapse';
 
@@ -27,29 +27,29 @@ function Navbar() {
             </span>
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <NavLink className="nav-link" to="/" exact>
                   Sobre mim
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/block-manager">
+                <NavLink className="nav-link" to="/block-manager">
                   Bloquear o bot
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/contact">
+                <NavLink className="nav-link" to="/contact">
                   Contato
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/privacy">
+                <NavLink className="nav-link" to="/privacy">
                   Termos e privacidade
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/releasenotes">
+                <NavLink className="nav-link" to="/releasenotes">
                   Histórico
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
