@@ -13,7 +13,7 @@ function App() {
     <Suspense fallback={<Loading content="Preparando menu..." />} >
       <Routes />
       <Footer />
-      <div className="bg-success bg-danger active text-dark" style={{ display: 'none' }}></div>
+      <div className="bg-success bg-danger bg-warning active text-dark" style={{ display: 'none' }}></div>
     </Suspense>
   );
 }
