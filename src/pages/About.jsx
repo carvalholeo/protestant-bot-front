@@ -1,13 +1,14 @@
 import { lazy, Suspense } from "react";
+import { Link } from "react-router-dom";
 
 import Loading from "../components/Loading";
-import analytics from '../services/analytics';
+import analytics from "../services/analytics";
 
 const Twemoji = lazy(() => import("react-twemoji"));
 const Breadcrumb = lazy(() => import("../components/Breadcrumb"));
 
 function About() {
-  analytics()
+  analytics();
   return (
     <Suspense fallback={<Loading message="Carregando dados..." />}>
       <Twemoji options={{ className: "emoji" }}>
@@ -18,9 +19,13 @@ function About() {
             <h1>Sobre mim</h1>
             <p>
               Bem-vindo ao meu site. Queria que a casa fosse maior, mas não deu{" "}
-              <span className="emoji">😑<img className="emoji" alt="" style={{display: 'none'}}/></span>... De todo jeito, fica à
-              vontade. Pegue seu café <span className="emoji">☕</span> e vamos
-              entender um pouco mais sobre mim.
+              <span className="emoji">
+                😑
+                <img className="emoji" alt="" style={{ display: "none" }} />
+              </span>
+              ... De todo jeito, fica à vontade. Pegue seu café{" "}
+              <span className="emoji">☕</span> e vamos entender um pouco mais
+              sobre mim.
             </p>
             <p>
               <strong>SIMM!</strong> Toda comunicação nesse site (exceto os
@@ -45,7 +50,11 @@ function About() {
             <ol>
               <li>
                 a comunidade protestante começou a ser atacada após AMAR o
-                Luterinho de crochê (esse que está na minha foto de perfil)
+                Luterinho de crochê:
+                <img
+                  src=""
+                  alt="Versão de crochê de Martinho Lutero, em um fundo rosa."
+                />
               </li>
               <li>
                 para que os webcrentes pudessem se conhecer em um lugar central
@@ -53,15 +62,15 @@ function About() {
             </ol>
             <p>
               Fui criado às pressas e os primeiros tweets foram retweetados na
-              conta do meu criador ainda na madrugada do dia 31/10 (que foram
-              sendo apagadas, para não misturar com outros conteúdos dele, a
-              maioria de política e tecnologia, além de reclamações em geral).
+              conta do meu criador ainda na madrugada do dia 31/10/2021 (que
+              foram sendo apagadas, para não misturar com outros conteúdos dele,
+              a maioria de política e tecnologia, além de reclamações em geral).
             </p>
             <p>
               Por causa da demora do Twitter em liberar as minhas senhas do
               sistema pra retweetar no meu perfil, eu só pude começar de forma
-              automática no dia 03/11, ou seja, 3 dias após o Dia do Protesto{" "}
-              <span className="emoji">🤡🤡</span>
+              automatizada no dia 03/11/2021, ou seja, 3 dias após o Dia do
+              Protesto <span className="emoji">🤡🤡</span>
             </p>
             <p>
               E pra não fazer jus à fama do brasileiro, meu criador preparou
@@ -73,21 +82,42 @@ function About() {
               Na minha conta, você não consegue mandar DM e o meu criador não
               fica monitorando os comentários (ou talvez sim{" "}
               <span className="emoji">🤔👀</span>). Então se quiser falar com
-              ele, chama na DM DELE.
+              ele, chama na DM DELE, ou através do{" "}
+              <Link to="/contact">formulário de contato</Link>.
             </p>
             <p>
-              P.S. 1: tanto a criadora do Luterinho, quanto o dono da ideia tem
-              conta aqui no Twitter. Mas como sempre, meu criador não lembra
-              quem são e esqueceu de anotar. Por favor, manifestem-se e falem
-              pra ele dar os devidos créditos!
+              P.S. 1: a criadora do Luterinho tem conta no Twitter, mas como
+              sempre, meu criador não lembra quem são e esqueceu de anotar. Se
+              você vir esta página, por favor, manifeste-se para receber os
+              devidos créditos!
             </p>
             <p>
-              P.S. 2: o meu criador deixou meu código livre para todos poderem
-              olhar. Nenhum tweet ou informação de vocês estão sendo guardadas e
-              o único log que eu tenho é o de quantas vezes o meu sistema caiu.
+              P.S. 2: a pessoa que teve a ideia da minha criação é o JM Teodoro.
+              Ele é artista e estudante de TI. Acessem o perfil dele no{" "}
+              <a
+                href="https://twitter.com/JM_SCTeodoro"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Twitter
+              </a>{" "}
+              e no{" "}
+              <a
+                href="https://www.instagram.com/dixperso21/?igshid=1wlnd48sxb3ft"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+              .
             </p>
             <p>
-              P.S. 3: Se você gostou da ideia, considere apoiar meu criador com
+              P.S. 3: o meu criador deixou meu código livre para todos poderem
+              olhar. Mais informações podem ser obtidas na página de{" "}
+              <Link to="/releasenotes">históricos de versões</Link>
+            </p>
+            <p>
+              P.S. 4: Se você gostou da ideia, considere apoiar meu criador com
               outras e sugestões de melhoria para mim também. Ele vai ficar
               feliz em saber sua opinião. Também considere apoiar
               financeiramente. Me manter no ar não é barato{" "}
@@ -98,7 +128,7 @@ function About() {
 
             <h3>Como eu funciono?</h3>
             <p>
-              Baseado em algum critério que colocarem pra mim, eu peço pro
+              Baseado em algum critério que estou configurado, eu peço pro
               Twitter monitorar e me avisar caso algum conteúdo esteja nesses
               critérios{" "}
               <small>
@@ -108,9 +138,15 @@ function About() {
               .
             </p>
             <p>
-              Então, eu pego o tweet e verifico se o Twitter não me bloqueou por
-              excesso de RT em pouco tempo. Depois, confirmo que a pessoa que
-              fez o tweet não pediu pra eu não dar RT.
+              Então, eu pego o tweet e verifico se:
+              <ul>
+                <li>
+                  o Twitter não me bloqueou por excesso de RT em pouco tempo
+                </li>
+                <li>eu não estou bloqueado pela pessoa no Twitter</li>
+                <li>eu não estou bloqueado pela pessoa nos meus registros</li>
+                <li>qualquer outro impedimento temporário ou permanente</li>
+              </ul>
             </p>
             <p>
               Se eu estiver bloqueado pelo Twitter, preciso esperar um tempo.
@@ -123,22 +159,23 @@ function About() {
               tweet não existe e passo pro próximo.
             </p>
 
+            <p>Se estiver tudo certo, o RT sai quase na hora!</p>
+
             <hr />
             <h2>Sobre o meu criador</h2>
             <p>
-              Léo Carvalho é desenolvedor back-end, com mais de 6 anos de
-              experiência acadêmica. Atualmente (março de 2021), trabalha como
-              Professor de programação na Digital House, escola de habilidades
-              digitais.
+              Léo Carvalho é desenvolvedor back-end, com mais de 6 anos de
+              experiência acadêmica. Atualmente (setembro de 2021), trabalha
+              como Professor de programação na Digital House, escola de
+              habilidades digitais.
             </p>
             <p>
-              Prestes a colar grau (final de abril), o Léo é formado em Análise
-              e Desenvolvimento de Sistemas pela Universidade Estácio. Diz ele
-              que quer fazer um mestrado, mas desconfio que ele vai acabar
-              mudando de ideia.
+              Formado em Análise e Desenvolvimento de Sistemas pela Universidade
+              Estácio, está se preparando para começar uma pós-graduação na área
+              de Engenharia de Software.
             </p>
             <p>
-              Ele tem 25 anos, mora no Guarujá, ama a praia (apesar de não ir
+              Ele tem 26 anos, mora no Guarujá, ama a praia (apesar de não ir
               tanto quanto gostaria) e é um nerd nato.
             </p>
             <p>
@@ -146,10 +183,29 @@ function About() {
               e programar mais um pouco.
             </p>
             <p>
-              Namorando uma pessoa que não gosta de se expor, Léo é cristão, que
-              já passou por igrejas pentecostais, neo-pentecostais, batistas
-              renovadas, sendo que no momento, encaminha-se para ficar na Igreja
-              Anglicana.
+              Solteiro, Léo é cristão, que já passou por igrejas pentecostais,
+              neo-pentecostais, batistas renovadas, e agora aguarda uma
+              oportunidade para ficar de vez na{" "}
+              <a
+                href="https://www.ieab.org.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Igreja Anglicana Episcopal do Brasil
+              </a>
+              .
+            </p>
+            <p>
+              Para saber mais informações sobre ele,{" "}
+              <a
+                href="https://leocarvalho.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                acesse seu site
+              </a>
+              . Lá, você terá acesso a todos os contatos pessoais dele e outras
+              coisas mais.
             </p>
           </div>
         </main>
