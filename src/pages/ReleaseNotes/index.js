@@ -10,7 +10,7 @@ function ReleaseNotes() {
       <h1>Histórico de versões - Release Notes</h1>
 
       <p>Nesta página, você encontra todas as informações sobre atualizações realizadas no sistema. Mais detalhes podem ser obtidos abaixo nos títulos das seções abaixo, que levará ao acesso do código-fonte e seu histórico detalhado.</p>
-      <h2><a href="https://github.com/carvalholeo/protestant-bot-front" target="_blank" rel="noreferrer noopener">Histórico do site/app</a></h2>
+      <h2><a href="https://github.com/carvalholeo/protestant-bot-front" className="link-light" target="_blank" rel="noreferrer noopener">Histórico do site/app</a></h2>
       <ul>
         <li>08 de setembro de 2021</li>
           <ul>
@@ -36,7 +36,7 @@ function ReleaseNotes() {
         </ul>
       </ul>
 
-      <h2><a href="https://github.com/carvalholeo/protestant-bot" target="_blank" rel="noreferrer noopener">Histórico do bot</a></h2>
+      <h2><a href="https://github.com/carvalholeo/protestant-bot" className="link-light" target="_blank" rel="noreferrer noopener">Histórico do bot</a></h2>
       <ul>
         <li>08 de setembro de 2021</li>
         <ul>

@@ -51,7 +51,7 @@ function PrivacyPolicy() {
         <p>O software pode ser desligado a qualquer momento, sem aviso prévio. Espero que você entenda que isso não constitui prejuízo a você de qualquer forma.</p>
         <p>Embora eu tenha colocado os melhores esforços em garantir que o robô mantenha seu funcionamento contínuo, sob várias hipóteses e situações, não é possível dar qualquer garantia de que não haverão falhas. Isso quer dizer que pedidos de bloqueio ou tentativas de retwetar podem não acontecer ou mesmo entrar na fila de espera. Isso significa que, a exemplo do parágrafo anterior, você não sofrerá nenhum prejuízo e não tem nenhum direito a reembolsos sob qualquer circusntância.</p>
         <p>Não custa lembrar que, por repostar conteúdo de acordo com uma hashtag ou marcação, os retweets são automáticos, sem revisão humana. Isso quer dizer que qualquer retweet <mark>não significa que endossamos, apoiamos ou estamos ligados ao criador de alguma forma.</mark></p>
-        <p>As dúvidas em relação a pontos controversos destes termos, devem ser enviados para mim, através de um dos <Link to='/contact'>meios de contato disponíveis.</Link></p>
+        <p>As dúvidas em relação a pontos controversos destes termos, devem ser enviados para mim, através de um dos <Link to='/contact' className="link-light">meios de contato disponíveis.</Link></p>
 
         <h2>Política de Privacidade</h2>
         <p>Sua privacidade é importante para nós. Por isso, quero listar aqui tudo o que você tem direito, de acordo com a Lei Federal 13709/2018 (Lei Geral de Proteção de Dados - LGPD). São eles:</p>
@@ -85,14 +85,14 @@ function PrivacyPolicy() {
         <p>De acordo com a LGPD, você deve poder ter uma forma de exercer seus direitos conosco. Para exercer esses direitos previstos na LGPD ou nesta política de privacidade, por favor, entre em contato abaixo:</p>
         <ul>
           <li>Leonardo Carvalho</li>
-          <li><a href="mailto:privacidade@leocarvalho.dev" target='_blank' rel='noreferrer noopener'>privacidade@leocarvalho.dev</a></li>
+          <li><a href="mailto:privacidade@leocarvalho.dev" target='_blank' rel='noreferrer noopener' className="link-light">privacidade@leocarvalho.dev</a></li>
         </ul>
         <p>O prazo de resposta é de até 10 dias úteis, considerando Feriados Nacionais, do estado de São Paulo e da cidade do Guarujá, também no estado de São Paulo.</p>
 
         <h3>Informações legais</h3>
         <p>Esse site é feito com várias tecnologias. No momento, as que eu preciso citar por força de contrato é:</p>
         <ul>
-          <li><a href="https://twemoji.twitter.com/" target='_blank' rel='noreferrer noopener'>Twemoji</a>, biblioteca que deixa todos os emojis do site no formato padrão do Twitter.</li>
+          <li><a href="https://twemoji.twitter.com/" target='_blank' rel='noreferrer noopener' className="link-light">Twemoji</a>, biblioteca que deixa todos os emojis do site no formato padrão do Twitter.</li>
         </ul>
 
       </div>
