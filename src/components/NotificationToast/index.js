@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Toast from "bootstrap/js/src/toast";
 
-function NotificationToast({ data, autoHide="true", delay="5000" }) {
+function NotificationToast({ data, autoHide="true", delay="5000", style }) {
   const [toast, setToast] = useState('Toast');
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function NotificationToast({ data, autoHide="true", delay="5000" }) {
 
   return (
     <>
-      <div className="position-relative">
+      <div className="position-relative" style={{...style}}>
         <div className="toast-container position-absolute bottom-0 end-0 pb-3">
           <div
             data-bs-delay={delay}

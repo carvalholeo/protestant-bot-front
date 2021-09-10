@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import Toast from "bootstrap/js/src/toast";
+import { useState } from 'react';
 
 import apiProtestantBot from '../../services/apiProtestantBot';
 import analytics from '../../services/analytics';
 
 import Breadcrumb from '../../components/Breadcrumb';
+import NotificationToast from '../../components/NotificationToast';
 
 function BlockManager() {
   analytics();
@@ -16,13 +16,7 @@ function BlockManager() {
     className: "warning text-dark",
     message: 'Você precisa preencher um usuário para ser bloqueado ou desbloqueado.'
   });
-  const [toast, setToast] = useState(new Toast());
-
-  useEffect(() => {
-    const toastLive = document.getElementById("liveToast");
-    const toast = new Toast(toastLive);
-    setToast(toast);
-  }, []);
+  const [show, setShow] = useState(false);
 
   function handleUser(event, block = true) {
     const inputDirty = event.target.value;
@@ -39,7 +33,7 @@ function BlockManager() {
     event.preventDefault();
 
     if (userBlock === '') {
-      toast.show();
+      setShow(true);
       return;
     }
 
@@ -68,7 +62,7 @@ function BlockManager() {
             message: `Tivemos um problema para te bloquear e tudo que este app sabe é: "${error.message}". Tente de novo mais tarde.`,
           });
         })
-        .finally(() => toast.show());
+        .finally(() => setShow(true));
     } else {
       alert('Bloqueio cancelado');
     }
@@ -78,7 +72,8 @@ function BlockManager() {
     event.preventDefault();
 
     if (userUnblock === '') {
-      toast.show();
+      setShow(true);
+      // toast.show();
       return;
     }
 
@@ -104,7 +99,7 @@ function BlockManager() {
           message: `Tivemos um problema para te desbloquear e tudo que este app sabe é: "${error.message}". Tente de novo mais tarde.`,
         });
       })
-      .finally(() => toast.show());
+      .finally(() => setShow(true));
   }
 
 
@@ -156,31 +151,9 @@ function BlockManager() {
             <button className="btn btn-primary" type="submit">Desbloquear</button>
           </div>
         </form>
-        <div className="position-relative" style={{ zIndex: 2000 }}>
-          <div className="toast-container position-absolute bottom-0 end-0 pb-3">
-            <div
-              className={`toast bg-${apiResponse.className}`}
-              role="alert"
-              aria-live="assertive"
-              aria-atomic="true"
-              id="liveToast"
-              data-bs-delay="10000"
-            >
-              <div className="toast-header">
-                <strong className="me-auto">{apiResponse.title}</strong>
-                <small>{apiResponse.time}</small>
-                <button
-                  type="button"
-                  className="btn-close"
-                  data-bs-dismiss="toast"
-                  aria-label="Fechar"
-                ></button>
-              </div>
-              <div className="toast-body">{apiResponse.message}</div>
-            </div>
-          </div>
-        </div>
-
+        {show && (
+          <NotificationToast data={apiResponse} delay="10000" style={{ zIndex: 2000 }} />
+        )}
       </div>
     </main>
   );
