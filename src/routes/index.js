@@ -15,7 +15,7 @@ const Error404 = lazy(() => import("../pages/Errors/404"));
 function Routes() {
   return (
     <Router>
-      <Suspense fallback={<Loading content="Carregando itens..." />} >
+      <Suspense fallback={<Loading content="Abrindo conteúdo..." />} >
         <Navbar />
         <Switch>
           <Route path="/" exact component={About} />

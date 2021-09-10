@@ -10,7 +10,7 @@ const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
   return (
-    <Suspense fallback={<Loading content="Carregando tela..." />} >
+    <Suspense fallback={<Loading content="Preparando menu..." />} >
       <Routes />
       <Footer />
       <div className="bg-success bg-danger active" style={{display: 'none'}}></div>

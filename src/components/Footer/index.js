@@ -5,7 +5,7 @@ const Twemoji = lazy(() => import("react-twemoji"));
 
 function Footer() {
   return (
-    <Suspense fallback={<Loading message="Carregando rodapé..." />}>
+    <Suspense fallback={<Loading content="Montando página..." />}>
       <Twemoji options={{ className: "emoji" }}>
         <footer className="footer mt-auto py-3 bg-dark" id="footer">
           <div className="container text-center">
