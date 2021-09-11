@@ -17,7 +17,7 @@ function NotificationToast({ data, children, autoHide = "true", delay = "5000", 
 
   return (
     <>
-      <div className="position-relative" style={{ ...style }}>
+      <div className="position-relative" style={{ zIndex: 3000, ...style }}>
         <div className="toast-container position-absolute top-0 end-0 pb-3">
           <div
             data-bs-delay={delay}
