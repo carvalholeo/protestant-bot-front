@@ -13,7 +13,7 @@ function Contact() {
   const [message, setMessage] = useState("");
   const [size, setSize] = useState(0);
   const [apiResponse, setApiResponse] = useState({});
-  const [show, setShow] = useState(false);
+  const [notification, setNotification] = useState(false);
 
   function handleTwitter(event) {
     const inputDirty = event.target.value;
@@ -42,8 +42,13 @@ function Contact() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    if (message.length <= 0) {
-      window.alert("MENSAGEM!");
+    if (size <= 0 || message.trim().length <= 0) {
+      setApiResponse({
+        title: "Contato",
+        className: "warning text-dark",
+        message: `O único campo obrigatório, da mensagem, está vazio. Por favor, preencha para enviar seu contato.`,
+      });
+      setNotification(true);
       return;
     }
 
@@ -63,7 +68,6 @@ function Contact() {
           className: "success",
           message: "Seu contato foi enviado com sucesso!",
         });
-        setShow(true);
         setName("");
         setTwitter("");
         setEmail("");
@@ -77,8 +81,8 @@ function Contact() {
           className: "danger",
           message: `Tivemos um problema pra registrar seu contato. Tudo que este app sabe é: "${error.message}". Por gentileza, tente novamente.`,
         });
-        setShow(true);
-      });
+      })
+      .finally(_ => setNotification(true));
   }
 
   return (
@@ -91,6 +95,9 @@ function Contact() {
           Para qualquer coisa que você queira falar, basta usar o formulário
           abaixo. Assim que possível, eu vou te responder!
         </p>
+        {notification && (
+          <NotificationToast data={apiResponse} autoHide="false" />
+        )}
         <form onSubmit={(e) => handleSubmit(e)} className="row g-2 mb-3">
           <div className="input-group mb-3 col-auto">
             <label className="col-sm-2 col-form-label me-3" htmlFor="name">
@@ -158,9 +165,6 @@ function Contact() {
             </button>
             <button className="btn btn-success col-5">Enviar</button>
           </div>
-            {show && (
-              <NotificationToast data={apiResponse} autoHide="false" />
-            )}
         </form>
       </div>
     </main>
