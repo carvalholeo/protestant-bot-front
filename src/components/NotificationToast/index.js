@@ -10,7 +10,6 @@ function NotificationToast({ data, autoHide="true", delay="5000", style }) {
   }, []);
 
   useEffect(() => {
-    console.log(toast)
     if (typeof toast === 'object' && data !== {}) {
       toast.show();
     }
