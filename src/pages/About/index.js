@@ -23,7 +23,6 @@ function About() {
               Bem-vindo ao meu site. Queria que a casa fosse maior, mas não deu{" "}
               <span className="emoji">
                 😑
-                <img className="emoji" alt="" style={{ display: "none" }} />
               </span>
               ... De todo jeito, fica à vontade. Pegue seu café{" "}
               <span className="emoji">☕</span> e vamos entender um pouco mais

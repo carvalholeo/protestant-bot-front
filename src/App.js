@@ -1,7 +1,6 @@
 import { Suspense, lazy, useEffect, useState } from 'react';
 
-import 'bootstrap/dist/css/bootstrap.css';
-import './app.css';
+import './_custom.scss'
 
 import Loading from './components/Loading';
 import NotificationToast from './components/NotificationToast';
@@ -57,7 +56,6 @@ function App() {
       )}
       <Routes />
       <Footer />
-      <div className="bg-success bg-danger bg-warning bg-primary active text-dark btn-dark btn-sm d-grid gap-2 d-md-block pt-1" style={{ display: 'none !important' }}></div>
     </Suspense>
   );
 }
