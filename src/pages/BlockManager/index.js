@@ -16,7 +16,7 @@ function BlockManager() {
     className: "warning text-dark",
     message: 'Você precisa preencher um usuário para ser bloqueado ou desbloqueado.'
   });
-  const [show, setShow] = useState(false);
+  const [notification, setNotification] = useState(false);
 
   function handleUser(event, block = true) {
     const inputDirty = event.target.value;
@@ -33,7 +33,7 @@ function BlockManager() {
     event.preventDefault();
 
     if (userBlock === '') {
-      setShow(true);
+      setNotification(true);
       return;
     }
 
@@ -62,7 +62,7 @@ function BlockManager() {
             message: `Tivemos um problema para te bloquear e tudo que este app sabe é: "${error.message}". Tente de novo mais tarde.`,
           });
         })
-        .finally(() => setShow(true));
+        .finally(() => setNotification(true));
     } else {
       alert('Bloqueio cancelado');
     }
@@ -72,8 +72,7 @@ function BlockManager() {
     event.preventDefault();
 
     if (userUnblock === '') {
-      setShow(true);
-      // toast.show();
+      setNotification(true);
       return;
     }
 
@@ -99,7 +98,7 @@ function BlockManager() {
           message: `Tivemos um problema para te desbloquear e tudo que este app sabe é: "${error.message}". Tente de novo mais tarde.`,
         });
       })
-      .finally(() => setShow(true));
+      .finally(() => setNotification(true));
   }
 
 
@@ -118,6 +117,9 @@ function BlockManager() {
 
         <hr />
         <h3>Bloqueio</h3>
+        {notification && (
+          <NotificationToast data={apiResponse} delay="10000" />
+        )}
         <p>Esta é a parte para efetuar o <mark>bloqueio</mark> do bot na sua conta. Assim, ao perceber que um tweet pertence à você, ele é automaticamente ignorado.</p>
         <form onSubmit={e => handleBlock(e)} className="row g-3">
           <div className="input-group mb-3 col-auto">
@@ -151,9 +153,6 @@ function BlockManager() {
             <button className="btn btn-primary" type="submit">Desbloquear</button>
           </div>
         </form>
-        {show && (
-          <NotificationToast data={apiResponse} delay="10000" style={{ zIndex: 2000 }} />
-        )}
       </div>
     </main>
   );
