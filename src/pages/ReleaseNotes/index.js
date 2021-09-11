@@ -12,6 +12,16 @@ function ReleaseNotes() {
         <p>Nesta página, você encontra todas as informações sobre atualizações realizadas no sistema. Mais detalhes podem ser obtidos abaixo nos títulos das seções abaixo, que levará ao acesso do código-fonte e seu histórico detalhado.</p>
         <h2><a href="https://github.com/carvalholeo/protestant-bot-front" className="link-light" target="_blank" rel="noreferrer noopener">Histórico do site/app</a></h2>
         <details>
+          <summary>11 de setembro de 2021</summary>
+          <ul>
+            <li>Correção do aviso de campo de mensagem vazia na página de contato</li>
+            <li>Melhoria da suavidade no carregamento de elementos</li>
+            <li>Criação de avisos de atualização, app online e offline</li>
+            <li>Correção de bug que fazia aparecer notificação vazia</li>
+          </ul>
+        </details>
+
+        <details>
           <summary>09 de setembro de 2021</summary>
           <ul>
             <li>Melhorias visuais do sistema de alerta de bloqueio e desbloqueio</li>
