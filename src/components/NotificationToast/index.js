@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Toast from "bootstrap/js/src/toast";
 
-function NotificationToast({ data, autoHide="true", delay="5000", style }) {
+function NotificationToast({ data, autoHide = "true", delay = "5000", style, systemCall }) {
   const [toast, setToast] = useState('Toast');
 
   useEffect(() => {
@@ -17,8 +17,8 @@ function NotificationToast({ data, autoHide="true", delay="5000", style }) {
 
   return (
     <>
-      <div className="position-relative" style={{...style}}>
-        <div className="toast-container position-absolute bottom-0 end-0 pb-3">
+      <div className="position-relative" style={{ ...style }}>
+        <div className="toast-container position-absolute top-0 end-0 pb-3">
           <div
             data-bs-delay={delay}
             data-bs-autohide={autoHide}
@@ -38,7 +38,14 @@ function NotificationToast({ data, autoHide="true", delay="5000", style }) {
                 aria-label="Fechar"
               ></button>
             </div>
-            <div className="toast-body">{data.message}</div>
+            <div className="toast-body">
+              {data.message}
+              {systemCall && (
+                <div className="d-grid gap-2 d-md-block pt-1" style={{ zIndex: 3100 }}>
+                  <button className="btn btn-dark btn-sm" type="button" data-bs-dismiss="toast">Fechar</button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
