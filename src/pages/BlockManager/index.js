@@ -17,6 +17,7 @@ function BlockManager() {
     message: 'Você precisa preencher um usuário para ser bloqueado ou desbloqueado.'
   });
   const [notification, setNotification] = useState(false);
+  const [className, setClassName] = useState('');
 
   function handleUser(event, block = true) {
     const inputDirty = event.target.value;
@@ -44,6 +45,7 @@ function BlockManager() {
     };
 
     if (confirmation) {
+      setClassName('disabled');
       await apiProtestantBot.post('/blocklist/block', data)
         .then(() => {
           setApiResponse({
@@ -62,7 +64,10 @@ function BlockManager() {
             message: `Tivemos um problema para te bloquear e tudo que este app sabe é: "${error.message}". Tente de novo mais tarde.`,
           });
         })
-        .finally(() => setNotification(true));
+        .finally(_ => {
+          setNotification(true);
+          setClassName('');
+        });
     } else {
       alert('Bloqueio cancelado');
     }
@@ -80,6 +85,7 @@ function BlockManager() {
       user: userUnblock
     };
 
+    setClassName('disabled');
     await apiProtestantBot.put('/blocklist/unblock', data)
       .then(() => {
         setApiResponse({
@@ -98,7 +104,10 @@ function BlockManager() {
           message: `Tivemos um problema para te desbloquear e tudo que este app sabe é: "${error.message}". Tente de novo mais tarde.`,
         });
       })
-      .finally(() => setNotification(true));
+      .finally(_ => {
+        setNotification(true);
+        setClassName('');
+      });
   }
 
 
@@ -132,7 +141,7 @@ function BlockManager() {
               onChange={e => handleUser(e, true)}
               value={userBlock}
             />
-            <button className="btn btn-danger" type="submit">Bloquear</button>
+            <button className={"btn btn-danger " + className} type="submit">Bloquear</button>
           </div>
         </form>
 
@@ -150,7 +159,7 @@ function BlockManager() {
               onChange={e => handleUser(e, false)}
               value={userUnblock}
             />
-            <button className="btn btn-primary" type="submit">Desbloquear</button>
+            <button className={"btn btn-primary " + className} type="submit">Desbloquear</button>
           </div>
         </form>
       </div>

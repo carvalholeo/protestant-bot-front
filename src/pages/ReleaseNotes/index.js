@@ -12,6 +12,15 @@ function ReleaseNotes() {
         <p>Nesta página, você encontra todas as informações sobre atualizações realizadas no sistema. Mais detalhes podem ser obtidos abaixo nos títulos das seções abaixo, que levará ao acesso do código-fonte e seu histórico detalhado.</p>
         <h2><a href="https://github.com/carvalholeo/protestant-bot-front" className="link-light" target="_blank" rel="noreferrer noopener">Histórico do site/app</a></h2>
         <details>
+          <summary>13 de setembro de 2021</summary>
+          <ul>
+            <li>Inclusão de e-mail como forma de contato</li>
+            <li>Desativar os botões do formulário de contato enquanto os dados estiverem sendo enviados</li>
+            <li>Desativar os botões da página de bloqueio de usuários enquanto os dados estiverem sendo enviados</li>
+          </ul>
+        </details>
+
+        <details>
           <summary>11 de setembro de 2021</summary>
           <ul>
             <li>Correção do aviso de campo de mensagem vazia na página de contato</li>
@@ -71,6 +80,13 @@ function ReleaseNotes() {
         <hr />
 
         <h2><a href="https://github.com/carvalholeo/protestant-bot" className="link-light" target="_blank" rel="noreferrer noopener">Histórico do bot</a></h2>
+        <details>
+          <summary>13 de setembro de 2021</summary>
+          <ul>
+            <li>Estruturação para envio de e-mail para os administradores quando um form de contato for enviado</li>
+          </ul>
+        </details>
+
         <details>
           <summary>08 de setembro de 2021</summary>
           <ul>

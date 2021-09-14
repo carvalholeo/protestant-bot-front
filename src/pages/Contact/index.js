@@ -14,6 +14,7 @@ function Contact() {
   const [size, setSize] = useState(0);
   const [apiResponse, setApiResponse] = useState({});
   const [notification, setNotification] = useState(false);
+  const [className, setClassName] = useState('');
 
   function handleTwitter(event) {
     const inputDirty = event.target.value;
@@ -59,6 +60,7 @@ function Contact() {
       message,
     };
 
+    setClassName('disabled');
     await api
       .post("contact", data)
       .then(() => {
@@ -82,7 +84,10 @@ function Contact() {
           message: `Tivemos um problema pra registrar seu contato. Tudo que este app sabe é: "${error.message}". Por gentileza, tente novamente.`,
         });
       })
-      .finally(_ => setNotification(true));
+      .finally(_ => {
+        setNotification(true);
+        setClassName('');
+      });
   }
 
   return (
@@ -160,10 +165,10 @@ function Contact() {
           </div>
           <p className="d-inline">{size} caractere(s) do limite de 2000.</p>
           <div className="mb-3 col-12 justify-content-center d-flex">
-            <button className="btn btn-danger col-3 me-3" type="reset">
+            <button className={"btn btn-danger col-3 me-3 " + className} type="reset">
               Apagar tudo
             </button>
-            <button className="btn btn-success col-5">Enviar</button>
+            <button className={"btn btn-success col-5 " + className}>Enviar</button>
           </div>
         </form>
       </div>
