@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HelmetProvider } from "react-helmet-async";
 import App from './App';
 
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
@@ -9,7 +10,9 @@ import OnlineOfflineProvider from './contexts/OnlineOfflineContext';
 ReactDOM.render(
   <React.StrictMode>
     <OnlineOfflineProvider>
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </OnlineOfflineProvider>
   </React.StrictMode>,
   document.getElementById('root')

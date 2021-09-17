@@ -61,7 +61,7 @@ function About() {
             </ol>
             <picture className="container-luther">
               <img
-                loading="true"
+                loading="lazy"
                 src={luterinho}
                 className={`rounded img-thumbnail float-md-start me-md-4 d-md-inline my-3 d-block litlle-luther`}
                 alt="Versão de crochê de Martinho Lutero, em um fundo rosa."
