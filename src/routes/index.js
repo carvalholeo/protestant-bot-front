@@ -1,8 +1,10 @@
 import { Suspense, lazy } from "react";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 
 import Loading from '../components/Loading';
+
+import Route from './Route';
 
 const Navbar = lazy(() => import("../components/Navbar"));
 const About = lazy(() => import("../pages/About"));
@@ -14,7 +16,6 @@ const Error404 = lazy(() => import("../pages/Errors/404"));
 
 function Routes() {
   return (
-    <Router>
       <Suspense fallback={<Loading content="Abrindo conteúdo..." />} >
         <Navbar />
         <Switch>
@@ -27,7 +28,6 @@ function Routes() {
           <Route component={Error404} />
         </Switch>
       </Suspense>
-    </Router>
   );
 }
 

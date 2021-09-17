@@ -1,6 +1,11 @@
-import { Suspense, lazy, useEffect, useState } from 'react';
+import { Suspense, lazy, useEffect, useState, useContext } from 'react';
+import { Router } from 'react-router-dom';
 
 import './_custom.scss'
+
+import UserProfileProvider from './contexts/UserProfileContext';
+import { OnlineOfflineContext } from './contexts/OnlineOfflineContext';
+import history from './services/history';
 
 import Loading from './components/Loading';
 import NotificationToast from './components/NotificationToast';
@@ -9,6 +14,7 @@ const Routes = lazy(() => import('./routes'));
 const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
+  const { changeOnlineStatus } = useContext(OnlineOfflineContext);
   const [notification, setNotification] = useState(false);
   const [info, setInfo] = useState({
     title: '',
@@ -28,35 +34,41 @@ function App() {
 
     window.addEventListener('online', () => {
       setInfo({
-          title: 'Você está online',
-          message: 'Sua internet está funcionando novamente e voltamos a ficar conectados com o servidor 🔛😎',
-          className: 'success'
+        title: 'Você está online',
+        message: 'Sua internet está funcionando novamente e voltamos a ficar conectados com o servidor 🔛😎',
+        className: 'success'
       });
       setNotification(true);
+      changeOnlineStatus(true);
     });
 
     window.addEventListener('offline', () => {
       setInfo({
-          title: 'Você está offline',
-          message: 'Parece que há um problema na sua conexão e estamos offline📴😭. Verifique sua conexão antes de tentar realizar alguma ação online.',
-          className: 'warning text-dark'
+        title: 'Você está offline',
+        message: 'Parece que há um problema na sua conexão e estamos offline📴😭. Verifique sua conexão antes de tentar realizar alguma ação online.',
+        className: 'warning text-dark'
       });
       setNotification(true);
+      changeOnlineStatus(false);
     });
-  }, []);
+  }, [changeOnlineStatus]);
 
   return (
-    <Suspense fallback={<Loading content="Preparando menu..." />} >
-      {notification && (
-        <NotificationToast autoHide="false" data={info}>
-          <div className="d-grid gap-2 d-md-block pt-1" style={{ zIndex: 3100 }}>
-            <button className="btn btn-dark btn-sm" type="button" data-bs-dismiss="toast" onClick={e => setNotification(false)}>Fechar</button>
-          </div>
-        </NotificationToast>
-      )}
-      <Routes />
-      <Footer />
-    </Suspense>
+    <Router history={history}>
+      <Suspense fallback={<Loading content="Preparando menu..." />} >
+        {notification && (
+          <NotificationToast autoHide="false" data={info}>
+            <div className="d-grid gap-2 d-md-block pt-1" style={{ zIndex: 3100 }}>
+              <button className="btn btn-dark btn-sm" type="button" data-bs-dismiss="toast" onClick={e => setNotification(false)}>Fechar</button>
+            </div>
+          </NotificationToast>
+        )}
+        <UserProfileProvider>
+          <Routes />
+          <Footer />
+        </UserProfileProvider>
+      </Suspense>
+    </Router>
   );
 }
 
