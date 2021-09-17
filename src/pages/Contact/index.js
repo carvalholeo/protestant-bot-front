@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 import api from "../../services/apiProtestantBot";
 import Breadcrumb from "../../components/Breadcrumb";
@@ -92,6 +93,10 @@ function Contact() {
 
   return (
     <main>
+      <Helmet>
+        <title>Contato</title>
+        <link rel="canonical" href={`${process.env.PUBLIC_URL}/contact`} />
+      </Helmet>
       <div className="container">
         <Breadcrumb message="Contato" />
 

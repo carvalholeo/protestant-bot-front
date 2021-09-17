@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import Breadcrumb from '../../../components/Breadcrumb';
 import analytics from '../../../services/analytics';
@@ -43,6 +44,9 @@ function Error404() {
 
   return (
     <main>
+      <Helmet>
+        <title>Erro 404 - Página não encontrada</title>
+      </Helmet>
       <div className="container">
         <Breadcrumb message="Você está em: Perdi o sinal do local que você está" />
 

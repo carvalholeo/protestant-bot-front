@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import Loading from "../../components/Loading";
 import analytics from "../../services/analytics";
@@ -15,6 +16,10 @@ function About() {
     <Suspense fallback={<Loading message="Carregando dados..." />}>
       <Twemoji options={{ className: "emoji" }}>
         <main>
+          <Helmet>
+            <title>Protestant Bot - Sobre mim</title>
+            <link rel="canonical" href={`${process.env.PUBLIC_URL}/block-manager`} />
+          </Helmet>
           <div className="container clearfix">
             <Breadcrumb message="Sobre mim" />
 

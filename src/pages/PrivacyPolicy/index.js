@@ -1,4 +1,5 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 
 import Breadcrumb from '../../components/Breadcrumb';
 import analytics from '../../services/analytics';
@@ -7,6 +8,10 @@ function PrivacyPolicy() {
   analytics();
   return (
     <main>
+      <Helmet>
+        <title>Termos e privacidade</title>
+        <link rel="canonical" href={`${process.env.PUBLIC_URL}/privacy`} />
+      </Helmet>
       <div className='container'>
         <Breadcrumb message="Termos e privacidade" />
 
@@ -39,12 +44,12 @@ function PrivacyPolicy() {
           <li>divulgação de pirâmides financeiras e vídeos de violência (psicológica, física, verbal ou física)</li>
           <li>compra e venda de armas, drogas (ilícitas ou não) ou outras coisas ilegais</li>
           <li>ofensas e qualquer tipo de assédio a grupos minoritários, como:</li>
-            <ul>
-              <li>mulheres</li>
-              <li>LGBTQIA+</li>
-              <li>negros</li>
-              <li>pessoas periféricas</li>
-            </ul>
+          <ul>
+            <li>mulheres</li>
+            <li>LGBTQIA+</li>
+            <li>negros</li>
+            <li>pessoas periféricas</li>
+          </ul>
           <li>qualquer outro conteúdo que os administradores entenderem que seja impróprio para o público do sistema, que é marjoritariamente cristão</li>
         </ul>
         <p>O recurso de de bloquear ou desbloquear o robô deve ser usado <mark>APENAS</mark> pelo dono da conta. Ao usar, você confirma que é o dono legítimo da conta. Entenda que nós não temos como fazer uma verificação se você é quem diz ser, sem invadir na sua privacidade.</p>
