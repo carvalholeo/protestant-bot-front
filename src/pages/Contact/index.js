@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet";
 
-import api from "../../services/apiProtestantBot";
 import Breadcrumb from "../../components/Breadcrumb";
+import HelmetWrapper from "../../components/HelmetWrapper";
 import NotificationToast from "../../components/NotificationToast";
+import api from "../../services/apiProtestantBot";
 import analytics from "../../services/analytics";
 
 function Contact() {
@@ -93,10 +93,7 @@ function Contact() {
 
   return (
     <main>
-      <Helmet>
-        <title>Contato</title>
-        <link rel="canonical" href={`${process.env.PUBLIC_URL}/contact`} />
-      </Helmet>
+      <HelmetWrapper title="Contato" canonical="contact" />
       <div className="container">
         <Breadcrumb message="Contato" />
 

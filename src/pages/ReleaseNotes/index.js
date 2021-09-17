@@ -1,16 +1,12 @@
-import { Helmet } from "react-helmet";
-
 import Breadcrumb from '../../components/Breadcrumb';
+import HelmetWrapper from "../../components/HelmetWrapper";
 import analytics from '../../services/analytics';
 
 function ReleaseNotes() {
   analytics();
   return (
     <main>
-      <Helmet>
-        <title>Histórico das versões</title>
-        <link rel="canonical" href={`${process.env.PUBLIC_URL}/releasenotes`} />
-      </Helmet>
+      <HelmetWrapper title="Histórico das versões" canonical="releasenotes" />
       <div className='container pb-4'>
         <Breadcrumb message="Histórico das Versões" />
         <h1>Histórico das versões - Release Notes</h1>

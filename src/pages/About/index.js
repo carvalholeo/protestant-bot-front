@@ -1,6 +1,5 @@
 import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 
 import Loading from "../../components/Loading";
 import analytics from "../../services/analytics";
@@ -9,6 +8,7 @@ import './index.css';
 
 const Twemoji = lazy(() => import("react-twemoji"));
 const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
+const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
 
 function About() {
   analytics();
@@ -16,10 +16,7 @@ function About() {
     <Suspense fallback={<Loading message="Carregando dados..." />}>
       <Twemoji options={{ className: "emoji" }}>
         <main>
-          <Helmet>
-            <title>Protestant Bot - Sobre mim</title>
-            <link rel="canonical" href={`${process.env.PUBLIC_URL}/block-manager`} />
-          </Helmet>
+          <HelmetWrapper title="Sobre mim" canonical=" " />
           <div className="container clearfix">
             <Breadcrumb message="Sobre mim" />
 

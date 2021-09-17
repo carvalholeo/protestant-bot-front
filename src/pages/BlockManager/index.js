@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Helmet } from "react-helmet";
 
 import apiProtestantBot from '../../services/apiProtestantBot';
 import analytics from '../../services/analytics';
 
 import Breadcrumb from '../../components/Breadcrumb';
+import HelmetWrapper from "../../components/HelmetWrapper";
 import NotificationToast from '../../components/NotificationToast';
 
 function BlockManager() {
@@ -114,10 +114,7 @@ function BlockManager() {
 
   return (
     <main>
-      <Helmet>
-        <title>Bloqueio e desbloqueio do bot</title>
-        <link rel="canonical" href={`${process.env.PUBLIC_URL}/block-manager`} />
-      </Helmet>
+      <HelmetWrapper title="Bloqueio e desbloqueio do bot" canonical="block-manager" />
       <div className='container'>
         <Breadcrumb message="Bloquear o bot" />
 

@@ -1,17 +1,14 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from "react-helmet";
 
 import Breadcrumb from '../../components/Breadcrumb';
+import HelmetWrapper from "../../components/HelmetWrapper";
 import analytics from '../../services/analytics';
 
 function PrivacyPolicy() {
   analytics();
   return (
     <main>
-      <Helmet>
-        <title>Termos e privacidade</title>
-        <link rel="canonical" href={`${process.env.PUBLIC_URL}/privacy`} />
-      </Helmet>
+      <HelmetWrapper title="Termos e privacidade" canonical="privacy" />
       <div className='container'>
         <Breadcrumb message="Termos e privacidade" />
 

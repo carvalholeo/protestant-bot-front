@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 
 import Breadcrumb from '../../../components/Breadcrumb';
+import HelmetWrapper from "../../../components/HelmetWrapper";
 import analytics from '../../../services/analytics';
 
 function Error404() {
@@ -44,11 +44,9 @@ function Error404() {
 
   return (
     <main>
-      <Helmet>
-        <title>Erro 404 - Página não encontrada</title>
-      </Helmet>
+      <HelmetWrapper title="Erro 404 - Página não encontrada" />
       <div className="container">
-        <Breadcrumb message="Você está em: Perdi o sinal do local que você está" />
+        <Breadcrumb message="'Perdi o sinal do local que você está'" />
 
         <h1 className="text-center">Erro 404</h1>
         <p>
