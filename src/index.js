@@ -1,20 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { StrictMode } from 'react';
+import { render } from 'react-dom';
 import { HelmetProvider } from "react-helmet-async";
-import App from './App';
 
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './lib/reportWebVitals';
+
+import App from './App';
 import OnlineOfflineProvider from './contexts/OnlineOfflineContext';
 
-ReactDOM.render(
-  <React.StrictMode>
+render(
+  <StrictMode>
     <OnlineOfflineProvider>
       <HelmetProvider>
         <App />
       </HelmetProvider>
     </OnlineOfflineProvider>
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root')
 );
 
