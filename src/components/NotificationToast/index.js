@@ -17,9 +17,9 @@ function NotificationToast({ data, children, autoHide = "true", delay = "5000", 
 
   return (
     <>
-      <div className="position-relative" style={{ zIndex: 3000, ...style }}>
-        <div className="toast-container position-absolute top-0 end-0 pb-3">
-          <div
+      <ins className="position-relative d-block" style={{ zIndex: 3000, ...style }}>
+        <article className="toast-container position-absolute top-0 end-0 pb-3">
+          <section
             data-bs-delay={delay}
             data-bs-autohide={autoHide}
             className={`toast bg-${data.className}`}
@@ -28,7 +28,7 @@ function NotificationToast({ data, children, autoHide = "true", delay = "5000", 
             aria-atomic="true"
             id="liveToast"
           >
-            <div className="toast-header">
+            <header className="toast-header">
               <strong className="me-auto">{data.title}</strong>
               <small>Alguns segundos atrás</small>
               <button
@@ -37,18 +37,18 @@ function NotificationToast({ data, children, autoHide = "true", delay = "5000", 
                 data-bs-dismiss="toast"
                 aria-label="Fechar"
               ></button>
-            </div>
+            </header>
             <article className="toast-body">
               <section>
                 {data.message}
               </section>
-              <section>
+              <footer>
                 {children}
-              </section>
+              </footer>
             </article>
-          </div>
-        </div>
-      </div>
+          </section>
+        </article>
+      </ins>
     </>
   );
 }
