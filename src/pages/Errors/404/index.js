@@ -63,8 +63,8 @@ function Error404() {
           <p>
             Como você pode reslver? Bem, todas as páginas que eu tenho no meu
             site, estão disponíveis no menu ali em cima. Você pode acessar a{" "}
-            <Link to="/">página inicial</Link> ou então{" "}
-            <Link to="/contact">entrar em contato com meu criador</Link>. Se for a
+            <Link to="/" className="link-light">página inicial</Link> ou então{" "}
+            <Link to="/contact" className="link-light">entrar em contato com meu criador</Link>. Se for a
             segunda opção, habilite a opção abaixo para visualizar e enviar as
             informações que irão aparecer.
           </p>

@@ -107,6 +107,7 @@ function Contact() {
             Para qualquer coisa que você queira falar, basta usar o formulário
             abaixo. Assim que possível, eu vou te responder!
           </p>
+          <p>Se você não quiser enviar o formulário, você pode chamar meu criador na <a href="https://twitter.com/_carvalho_leo" className="link-light" target="_blank" rel="noopener noreferrer">DM do Twitter</a> ou mande um e-mail para <a href="mailto:contato@leocarvalho.dev" className="link-light">contato@leocarvalho.dev</a>.</p>
           {notification && (
             <NotificationToast data={apiResponse} autoHide="false" />
           )}
