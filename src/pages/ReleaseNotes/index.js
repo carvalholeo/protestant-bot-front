@@ -12,6 +12,14 @@ function ReleaseNotes() {
         <p>Nesta página, você encontra todas as informações sobre atualizações realizadas no sistema. Mais detalhes podem ser obtidos abaixo nos títulos das seções abaixo, que levará ao acesso do código-fonte e seu histórico detalhado.</p>
         <h2><a href="https://github.com/carvalholeo/protestant-bot-front" className="link-light" target="_blank" rel="noreferrer noopener">Histórico do site/app</a></h2>
         <details>
+          <summary>16 de setembro de 2021</summary>
+          <ul>
+            <li>Correção de bugs e melhorias de desempenho</li>
+            <li>Preparação para criação de uma área restrita à administradores</li>
+          </ul>
+        </details>
+
+        <details>
           <summary>13 de setembro de 2021</summary>
           <ul>
             <li>Inclusão de e-mail como forma de contato</li>
@@ -83,7 +91,7 @@ function ReleaseNotes() {
         <details>
           <summary>13 de setembro de 2021</summary>
           <ul>
-            <li>Estruturação para envio de e-mail para os administradores quando um form de contato for enviado</li>
+            <li>Envio de e-mail para os administradores quando um formulário de contato é enviado</li>
           </ul>
         </details>
 
