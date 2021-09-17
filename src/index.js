@@ -4,10 +4,13 @@ import App from './App';
 
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './lib/reportWebVitals';
+import OnlineOfflineProvider from './contexts/OnlineOfflineContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <OnlineOfflineProvider>
+      <App />
+    </OnlineOfflineProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
