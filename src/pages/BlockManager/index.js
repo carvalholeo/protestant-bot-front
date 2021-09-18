@@ -1,9 +1,11 @@
-import { useState, lazy, Suspense } from 'react';
+import { useState, lazy, Suspense, useContext, useEffect } from 'react';
 
 import apiProtestantBot from '../../services/apiProtestantBot';
 import analytics from '../../services/analytics';
 
 import Loading from "../../components/Loading";
+
+import { OnlineOfflineContext } from '../../contexts/OnlineOfflineContext';
 
 const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
 const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
@@ -11,6 +13,7 @@ const NotificationToast = lazy(() => import("../../components/NotificationToast"
 
 function BlockManager() {
   analytics();
+  const { online } = useContext(OnlineOfflineContext);
   const [userBlock, setUserBlock] = useState('');
   const [userUnblock, setUserUnblock] = useState('');
   const [apiResponse, setApiResponse] = useState({
@@ -21,6 +24,14 @@ function BlockManager() {
   });
   const [notification, setNotification] = useState(false);
   const [className, setClassName] = useState('');
+
+  useEffect(() => {
+    if (online) {
+      setClassName('');
+      return;
+    }
+    setClassName('disabled');
+  }, [online]);
 
   function handleUser(event, block = true) {
     const inputDirty = event.target.value;

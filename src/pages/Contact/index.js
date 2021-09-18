@@ -1,9 +1,11 @@
-import { useState, lazy, Suspense } from "react";
+import { useState, lazy, Suspense, useEffect, useContext } from "react";
 
 import api from "../../services/apiProtestantBot";
 import analytics from "../../services/analytics";
 
 import Loading from "../../components/Loading";
+
+import { OnlineOfflineContext } from '../../contexts/OnlineOfflineContext';
 
 const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
 const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
@@ -11,6 +13,7 @@ const NotificationToast = lazy(() => import("../../components/NotificationToast"
 
 function Contact() {
   analytics();
+  const { online } = useContext(OnlineOfflineContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [twitter, setTwitter] = useState("");
@@ -28,6 +31,14 @@ function Contact() {
       setTwitter(inputClean);
     }
   }
+
+  useEffect(() => {
+    if (online) {
+      setClassName('');
+      return;
+    }
+    setClassName('disabled');
+  }, [online]);
 
   function handleField(event, size, field) {
     const input = event.target.value;
