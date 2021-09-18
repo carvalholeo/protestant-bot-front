@@ -16,7 +16,12 @@ function About() {
     <Suspense fallback={<Loading message="Carregando dados..." />}>
       <Twemoji options={{ className: "emoji" }}>
         <main>
-          <HelmetWrapper title="Sobre mim" canonical=" " />
+          <HelmetWrapper
+            title="Sobre mim"
+            canonical=" "
+            keywords="o que é bot lutero, detalhes bot lutero, o que é protestant bot, detalhes protestant bot"
+            description="O BotLutero é um perfil no Twitter criado na Reforma Protestante de 2020 e dá RT em tweets sobre cristianismo, em especial todo dia 31 de outubro. Saiba mais!"
+          />
           <div className="container clearfix">
             <Breadcrumb message="Sobre mim" />
 

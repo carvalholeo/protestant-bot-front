@@ -12,7 +12,12 @@ function ReleaseNotes() {
   return (
     <Suspense fallback={<Loading message="Carregando dados..." />}>
       <main>
-        <HelmetWrapper title="Histórico das versões" canonical="releasenotes" />
+        <HelmetWrapper
+          title="Histórico das versões"
+          canonical="releasenotes"
+          keywords="release notes bot lutero, release notes protestant bot, nova versão protestant bot, histórico protestant bot, código fonte protestant bot, código fonte bot lutero"
+          description="Já passei por muitas mudanças e melhorias. Aqui, você tem uma ideia do que aconteceu ao longo do tempo, com um resumo das principais mudanças e atualizações. Saiba mais!"
+        />
         <div className='container pb-4'>
           <Breadcrumb message="Histórico das Versões" />
           <h1>Histórico das versões - Release Notes</h1>

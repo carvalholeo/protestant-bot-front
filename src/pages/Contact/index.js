@@ -98,7 +98,12 @@ function Contact() {
     <Suspense fallback={<Loading message="Carregando dados..." />}>
 
       <main>
-        <HelmetWrapper title="Contato" canonical="contact" />
+        <HelmetWrapper
+          title="Contato"
+          canonical="contact"
+          keywords="contato protestant bot, falar protestant bot, falar bot lutero, contato bot lutero, email protestant bot, email bot lutero"
+          description="Você tem algumas formas de falar comigo. Tem um formulário aqui, pode mandar um e-mail pro meu criador ou conversar na DM do Twitter dele. Saiba mais nessa página!"
+        />
         <div className="container">
           <Breadcrumb message="Contato" />
 

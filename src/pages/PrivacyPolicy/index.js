@@ -13,7 +13,12 @@ function PrivacyPolicy() {
   return (
     <Suspense fallback={<Loading message="Carregando dados..." />}>
       <main>
-        <HelmetWrapper title="Termos e privacidade" canonical="privacy" />
+        <HelmetWrapper
+          title="Termos e privacidade"
+          canonical="privacy"
+          keywords="privacidade protestant bot, termos de uso protestant bot, regras protestant bot, regulamento protestant bot, privacidade bot lutero, termos de uso bot lutero, regras bot lutero, regulamento bot lutero"
+          description="Eu sei, ninguém lê essa página, nem aguenta esse papo de advogado. Mas talvez você queira saber os seus direitos, o que pode ou não fazer comigo. Dá uma lida aqui."
+        />
         <div className='container'>
           <Breadcrumb message="Termos e privacidade" />
 

@@ -117,7 +117,12 @@ function BlockManager() {
   return (
     <Suspense fallback={<Loading message="Carregando dados..." />}>
       <main>
-        <HelmetWrapper title="Bloqueio e desbloqueio do bot" canonical="block-manager" />
+        <HelmetWrapper
+          title="Bloqueio e desbloqueio do bot"
+          canonical="block-manager"
+          keywords="bloquear bot lutero, block bot lutero, block protestant bot, bloquear protestant bot, desbloquear bot lutero, tirar block bot lutero, tirar block protestant bot, desbloquear protestant bot"
+          description="Os usuários que não se sentem bem comigo dando RT em seus posts, têm o direito de me impedir, sem precisar me bloquear no Twitter. Esta é a página pra impedir e liberar meus RTs."
+        />
         <div className='container'>
           <Breadcrumb message="Bloquear o bot" />
 
