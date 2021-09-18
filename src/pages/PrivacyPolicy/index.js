@@ -1,7 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 
-import analytics from '../../services/analytics';
 
 import Loading from "../../components/Loading";
 
@@ -9,7 +8,6 @@ const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
 const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
 
 function PrivacyPolicy() {
-  analytics();
   return (
     <Suspense fallback={<Loading message="Carregando dados..." />}>
       <main>

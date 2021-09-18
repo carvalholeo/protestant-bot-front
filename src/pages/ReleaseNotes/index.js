@@ -1,14 +1,11 @@
 import { lazy, Suspense } from 'react';
 
-import analytics from '../../services/analytics';
-
 import Loading from "../../components/Loading";
 
 const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
 const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
 
 function ReleaseNotes() {
-  analytics();
   return (
     <Suspense fallback={<Loading message="Carregando dados..." />}>
       <main>

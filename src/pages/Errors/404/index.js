@@ -1,15 +1,12 @@
 import { useState, useEffect, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 
-import analytics from '../../../services/analytics';
-
 import Loading from "../../../components/Loading";
 
 const Breadcrumb = lazy(() => import("../../../components/Breadcrumb"));
 const HelmetWrapper = lazy(() => import("../../../components/HelmetWrapper"));
 
 function Error404() {
-  analytics();
   const [pageInformations, setPageInformations] = useState({});
   const [sessionStorageContent, setSessionStorageContent] = useState("");
   const [localStorageContent, setLocalStorageContent] = useState("");

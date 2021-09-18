@@ -1,7 +1,6 @@
 import { useState, lazy, Suspense, useEffect, useContext } from "react";
 
 import api from "../../services/apiProtestantBot";
-import analytics from "../../services/analytics";
 
 import Loading from "../../components/Loading";
 
@@ -12,7 +11,6 @@ const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
 const NotificationToast = lazy(() => import("../../components/NotificationToast"));
 
 function Contact() {
-  analytics();
   const { online } = useContext(OnlineOfflineContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

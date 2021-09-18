@@ -2,7 +2,6 @@ import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 
 import Loading from "../../components/Loading";
-import analytics from "../../services/analytics";
 import luterinho from "../../assets/luterinho.webp";
 import './index.css';
 
@@ -11,7 +10,6 @@ const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
 const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
 
 function About() {
-  analytics();
   return (
     <Suspense fallback={<Loading message="Carregando dados..." />}>
       <Twemoji options={{ className: "emoji" }}>

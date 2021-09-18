@@ -1,7 +1,6 @@
 import { useState, lazy, Suspense, useContext, useEffect } from 'react';
 
 import apiProtestantBot from '../../services/apiProtestantBot';
-import analytics from '../../services/analytics';
 
 import Loading from "../../components/Loading";
 
@@ -12,7 +11,6 @@ const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
 const NotificationToast = lazy(() => import("../../components/NotificationToast"));
 
 function BlockManager() {
-  analytics();
   const { online } = useContext(OnlineOfflineContext);
   const [userBlock, setUserBlock] = useState('');
   const [userUnblock, setUserUnblock] = useState('');

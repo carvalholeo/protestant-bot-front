@@ -1,11 +1,12 @@
 import { Suspense, lazy, useEffect, useState, useContext } from 'react';
-import { Router } from 'react-router-dom';
+import { Router, useLocation } from 'react-router-dom';
 
 import './_custom.scss'
 
 import UserProfileProvider from './contexts/UserProfileContext';
 import { OnlineOfflineContext } from './contexts/OnlineOfflineContext';
 import history from './services/history';
+import Analytics from './services/analytics';
 
 import Loading from './components/Loading';
 import NotificationToast from './components/NotificationToast';
@@ -21,6 +22,9 @@ function App() {
     message: '',
     className: ''
   });
+
+  const { pathname } = useLocation();
+  Analytics(pathname);
 
   useEffect(() => {
     window.addEventListener('updatefound', () => {
