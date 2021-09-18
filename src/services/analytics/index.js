@@ -1,9 +1,12 @@
 import useAckee from "use-ackee";
-function Analytics() {
-  const history = `${document.location.pathname}${document.location.hash}`;
-  useAckee(history, {
-    domainId: '8cf0d117-2986-4322-8552-b001ee61b3d0',
-    server: 'https://analytics.leocarvalho.dev'
+
+const SERVER = process.env.REACT_APP_ANALYTICS_SERVER;
+const DOMAIN_ID = process.env.REACT_APP_ANALYTICS_ID;
+
+function Analytics(pathname) {
+  useAckee(pathname, {
+    domainId: DOMAIN_ID,
+    server: SERVER
   }, {
     detailed: true,
     ignoreLocalhost: true,
