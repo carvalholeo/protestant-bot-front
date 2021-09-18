@@ -1,3 +1,5 @@
+const sitemapGenerator = require('./src/services/sitemap-generator');
+
 module.exports = {
   webpack: {
     test: /\.(scss)$/,
@@ -27,5 +29,14 @@ module.exports = {
       loader: 'sass-loader'
     }],
     externals: ["react-helmet"],
+    plugins: [
+      {
+        apply: (compiler) => {
+          compiler.hooks.afterEmit.tap('afterCompile', () => {
+            sitemapGenerator()
+          });
+        }
+      }
+    ],
   }
 };
