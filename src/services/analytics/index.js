@@ -1,13 +1,13 @@
-import { create } from 'ackee-tracker';
+import * as ackeeTracker from 'ackee-tracker';
+import useAckee from 'use-ackee';
 
 const SERVER = process.env.REACT_APP_ANALYTICS_SERVER;
 const DOMAIN_ID = process.env.REACT_APP_ANALYTICS_ID;
-const EVENT_ID = process.env.REACT_APP_EVENT_ID;
 
 const OPTIONS = {
   detailed: true,
   ignoreLocalhost: true,
-  ignoreOwnVisits: true
+  ignoreOwnVisits: false
 }
 
 const WEB_VITALS = {
@@ -20,23 +20,37 @@ const WEB_VITALS = {
   TBT: 'Total Blocking Time'
 };
 
-function Analytics(pathname) {
-  const tracker = create(SERVER, OPTIONS);
-  tracker.record(DOMAIN_ID, {
-    siteLocation: pathname.pathname,
-    siteReferrer: document.referrer,
-  });
+const EVENT_ID = {
+  CLS: process.env.REACT_APP_EVENT_CLS,
+  LCP: process.env.REACT_APP_EVENT_LCP,
+  TTFB: process.env.REACT_APP_EVENT_TTFB,
+  FCP: process.env.REACT_APP_EVENT_FCP,
+  FID: process.env.REACT_APP_EVENT_FID,
+  TTI: process.env.REACT_APP_EVENT_TTI,
+  TBT: process.env.REACT_APP_EVENT_TBT
 }
 
-function analyticsActions({ name, value }) {
+function trackerFunction() {
+  return ackeeTracker.create(SERVER, OPTIONS);
+}
+
+export const trackerExecution = trackerFunction();
+
+export function Analytics() {
+  const history = `${document.location.pathname}${document.location.hash}`;
+  useAckee(history, {
+    domainId: DOMAIN_ID,
+    server: SERVER
+  }, OPTIONS);
+}
+
+export function analyticsActions({ name, value }) {
   const action = WEB_VITALS[name];
-  const tracker = create(SERVER, OPTIONS);
-  tracker.action(EVENT_ID, {
+  const id = EVENT_ID[name];
+  const tracker = trackerExecution;
+
+  tracker.action(id, {
     key: action,
     value: value
   });
 }
-
-export { analyticsActions };
-
-export default Analytics;

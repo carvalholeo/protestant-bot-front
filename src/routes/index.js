@@ -1,8 +1,9 @@
 import React from "react";
-import { Switch, useLocation } from "react-router-dom";
+import { Switch } from "react-router-dom";
 
 import Loading from '../components/Loading';
-import { LocationContext } from "../contexts/LocationContext";
+
+import * as analytics from '../services/analytics';
 
 import Route from './Route';
 
@@ -15,12 +16,7 @@ const Contact = React.lazy(() => import("../pages/Contact"));
 const Error404 = React.lazy(() => import("../pages/Errors/404"));
 
 function Routes() {
-  const location = useLocation();
-  const { changePathName } = React.useContext(LocationContext);
-
-  React.useEffect(() => {
-    changePathName(location)
-  }, [location, changePathName]);
+  analytics.Analytics()
 
   return (
     <React.Suspense fallback={<Loading content="Abrindo conteúdo..." />} >

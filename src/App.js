@@ -5,7 +5,6 @@ import './_custom.scss'
 
 import UserProfileProvider from './contexts/UserProfileContext';
 import { OnlineOfflineContext } from './contexts/OnlineOfflineContext';
-import LocationProvider from './contexts/LocationContext';
 import history from './services/history';
 
 import Loading from './components/Loading';
@@ -58,19 +57,17 @@ function App() {
   return (
     <Router history={history}>
       <Suspense fallback={<Loading content="Preparando menu..." />} >
-        <LocationProvider>
-          {notification && (
-            <NotificationToast autoHide="false" data={info}>
-              <div className="d-grid gap-2 d-md-block pt-1" style={{ zIndex: 3100 }}>
-                <button className="btn btn-dark btn-sm" type="button" data-bs-dismiss="toast" onClick={e => setNotification(false)}>Fechar</button>
-              </div>
-            </NotificationToast>
-          )}
-          <UserProfileProvider>
-            <Routes />
-            <Footer />
-          </UserProfileProvider>
-        </LocationProvider>
+        {notification && (
+          <NotificationToast autoHide="false" data={info}>
+            <div className="d-grid gap-2 d-md-block pt-1" style={{ zIndex: 3100 }}>
+              <button className="btn btn-dark btn-sm" type="button" data-bs-dismiss="toast" onClick={e => setNotification(false)}>Fechar</button>
+            </div>
+          </NotificationToast>
+        )}
+        <UserProfileProvider>
+          <Routes />
+          <Footer />
+        </UserProfileProvider>
       </Suspense>
     </Router>
   );
