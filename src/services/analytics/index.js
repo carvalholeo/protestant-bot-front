@@ -23,7 +23,7 @@ const WEB_VITALS = {
 function Analytics(pathname) {
   const tracker = create(SERVER, OPTIONS);
   tracker.record(DOMAIN_ID, {
-    siteLocation: pathname,
+    siteLocation: pathname.pathname,
     siteReferrer: document.referrer,
   });
 }
