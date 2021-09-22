@@ -11,20 +11,40 @@
       "type": "image/x-icon"
     },
     {
+      "src": "favicon@96.ico",
+      "sizes": "96x96",
+      "type": "image/x-icon"
+    },
+    {
       "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
+      "src": "logo320.png",
+      "type": "image/png",
+      "sizes": "320x320"
+    },
+    {
+      "src": "logo400.png",
+      "type": "image/png",
+      "sizes": "400x400"
+    },
+    {
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "logo1080.png",
+      "type": "image/png",
+      "sizes": "1080x1080"
     }
   ],
   "categories": ["social", "religion", "lifestyle"],
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#ffbe03",
   "background_color": "#ffffff",
   "orientation": "portrait"
 }
