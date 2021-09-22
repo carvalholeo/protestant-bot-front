@@ -22,6 +22,16 @@ function ReleaseNotes() {
           <p>Nesta página, você encontra todas as informações sobre atualizações realizadas no sistema. Mais detalhes podem ser obtidos abaixo nos títulos das seções abaixo, que levará ao acesso do código-fonte e seu histórico detalhado.</p>
           <h2><a href="https://github.com/carvalholeo/protestant-bot-front" className="link-light" target="_blank" rel="noreferrer noopener">Histórico do site/app</a></h2>
           <details>
+            <summary>22 de setembro de 2021</summary>
+            <ul>
+              <li>Correção de bugs e melhorias de desempenho</li>
+              <li>Correção de posicionamento do rodapé</li>
+              <li>Correção da coleta de dados de desempenho</li>
+              <li>Melhorias nas cores de textos de apoio</li>
+            </ul>
+          </details>
+
+          <details>
             <summary>16 de setembro de 2021</summary>
             <ul>
               <li>Correção de bugs e melhorias de desempenho</li>
