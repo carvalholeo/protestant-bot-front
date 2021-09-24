@@ -7,14 +7,17 @@ import reportWebVitals from './lib/reportWebVitals';
 
 import App from './App';
 import OnlineOfflineProvider from './contexts/OnlineOfflineContext';
+import DarkModeProvider from './contexts/DarkModeContext';
 import { analyticsActions } from './services/analytics';
 
 render(
   <StrictMode>
     <OnlineOfflineProvider>
-      <HelmetProvider>
-        <App />
-      </HelmetProvider>
+      <DarkModeProvider>
+        <HelmetProvider>
+          <App />
+        </HelmetProvider>
+      </DarkModeProvider>
     </OnlineOfflineProvider>
   </StrictMode>,
   document.getElementById('root')
