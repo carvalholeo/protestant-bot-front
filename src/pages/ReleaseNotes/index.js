@@ -4,6 +4,7 @@ import Loading from "../../components/Loading";
 
 const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
 const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
+const AnchorHTML = lazy(() => import("../../components/AnchorHTML"));
 
 function ReleaseNotes() {
   return (
@@ -20,7 +21,7 @@ function ReleaseNotes() {
           <h1>Histórico das versões - Release Notes</h1>
 
           <p>Nesta página, você encontra todas as informações sobre atualizações realizadas no sistema. Mais detalhes podem ser obtidos abaixo nos títulos das seções abaixo, que levará ao acesso do código-fonte e seu histórico detalhado.</p>
-          <h2><a href="https://github.com/carvalholeo/protestant-bot-front" className="link-light" target="_blank" rel="noreferrer noopener">Histórico do site/app</a></h2>
+          <h2><AnchorHTML href="https://github.com/carvalholeo/protestant-bot-front" target="_blank" rel="noreferrer noopener">Histórico do site/app</AnchorHTML></h2>
           <details>
             <summary>22 de setembro de 2021</summary>
             <ul>
@@ -107,7 +108,7 @@ function ReleaseNotes() {
 
           <hr />
 
-          <h2><a href="https://github.com/carvalholeo/protestant-bot" className="link-light" target="_blank" rel="noreferrer noopener">Histórico do bot</a></h2>
+          <h2><AnchorHTML href="https://github.com/carvalholeo/protestant-bot" target="_blank" rel="noreferrer noopener">Histórico do bot</AnchorHTML></h2>
           <details>
             <summary>13 de setembro de 2021</summary>
             <ul>

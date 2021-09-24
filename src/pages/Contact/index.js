@@ -9,6 +9,7 @@ import { OnlineOfflineContext } from '../../contexts/OnlineOfflineContext';
 const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
 const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
 const NotificationToast = lazy(() => import("../../components/NotificationToast"));
+const AnchorHTML = lazy(() => import("../../components/AnchorHTML"));
 
 function Contact() {
   const { online } = useContext(OnlineOfflineContext);
@@ -16,7 +17,7 @@ function Contact() {
   const [email, setEmail] = useState("");
   const [twitter, setTwitter] = useState("");
   const [message, setMessage] = useState("");
-  const [size, setSize] = useState(0);
+  const [size, setSize] = useState(2000);
   const [apiResponse, setApiResponse] = useState({});
   const [notification, setNotification] = useState(false);
   const [className, setClassName] = useState('');
@@ -48,7 +49,7 @@ function Contact() {
   function handleTextArea(event) {
     const input = event.target.value;
     if (input.length <= 2000) {
-      setSize(input.length);
+      setSize(2000 - input.length);
       setMessage(input);
     }
   }
@@ -121,7 +122,7 @@ function Contact() {
             Para qualquer coisa que você queira falar, basta usar o formulário
             abaixo. Assim que possível, eu vou te responder!
           </p>
-          <p>Se você não quiser enviar o formulário, você pode chamar meu criador na <a href="https://twitter.com/_carvalho_leo" className="link-light" target="_blank" rel="noopener noreferrer">DM do Twitter</a> ou mande um e-mail para <a href="mailto:contato@leocarvalho.dev" className="link-light">contato@leocarvalho.dev</a>.</p>
+          <p>Se você não quiser enviar o formulário, você pode chamar meu criador na <AnchorHTML href="https://twitter.com/_carvalho_leo" target="_blank" rel="noopener noreferrer">DM do Twitter</AnchorHTML> ou mande um e-mail para <AnchorHTML href="mailto:contato@leocarvalho.dev">contato@leocarvalho.dev</AnchorHTML>.</p>
           {notification && (
             <NotificationToast data={apiResponse} autoHide="false" />
           )}
@@ -185,7 +186,7 @@ function Contact() {
                 value={message}
               ></textarea>
             </div>
-            <p className="d-inline">{size} caractere(s) do limite de 2000.</p>
+            <p className="d-inline">{size} caractere(s) restantes.</p>
             <div className="mb-3 col-12 justify-content-center d-flex">
               <button className={"btn btn-danger col-3 me-3 " + className} type="reset">
                 Apagar tudo

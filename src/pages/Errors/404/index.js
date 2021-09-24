@@ -1,10 +1,10 @@
 import { useState, useEffect, lazy, Suspense } from "react";
-import { Link } from "react-router-dom";
 
 import Loading from "../../../components/Loading";
 
 const Breadcrumb = lazy(() => import("../../../components/Breadcrumb"));
 const HelmetWrapper = lazy(() => import("../../../components/HelmetWrapper"));
+const AnchorLink = lazy(() => import("../../../components/AnchorLink"));
 
 function Error404() {
   const [pageInformations, setPageInformations] = useState({});
@@ -60,8 +60,8 @@ function Error404() {
           <p>
             Como você pode reslver? Bem, todas as páginas que eu tenho no meu
             site, estão disponíveis no menu ali em cima. Você pode acessar a{" "}
-            <Link to="/" className="link-light">página inicial</Link> ou então{" "}
-            <Link to="/contact" className="link-light">entrar em contato com meu criador</Link>. Se for a
+            <AnchorLink to="/">página inicial</AnchorLink> ou então{" "}
+            <AnchorLink to="/contact">entrar em contato com meu criador</AnchorLink>. Se for a
             segunda opção, habilite a opção abaixo para visualizar e enviar as
             informações que irão aparecer.
           </p>

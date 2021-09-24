@@ -1,5 +1,4 @@
 import { lazy, Suspense } from "react";
-import { Link } from "react-router-dom";
 
 import Loading from "../../components/Loading";
 import luterinho from "../../assets/luterinho.webp";
@@ -8,6 +7,8 @@ import './index.css';
 const Twemoji = lazy(() => import("react-twemoji"));
 const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
 const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
+const AnchorHTML = lazy(() => import("../../components/AnchorHTML"));
+const AnchorLink = lazy(() => import("../../components/AnchorLink"));
 
 function About() {
   return (
@@ -93,7 +94,7 @@ function About() {
               fica monitorando os comentários (ou talvez sim{" "}
               <span className="emoji">🤔👀</span>). Então se quiser falar com
               ele, chama na DM DELE, ou através do{" "}
-              <Link to="/contact" className="link-light">formulário de contato</Link>.
+              <AnchorLink to="/contact">formulário de contato</AnchorLink>.
             </p>
             <p>
               P.S. 1: a criadora do Luterinho tem conta no Twitter, mas como
@@ -104,29 +105,27 @@ function About() {
             <p>
               P.S. 2: a pessoa que teve a ideia da minha criação é o JM Teodoro.
               Ele é artista e estudante de TI. Acessem os perfis dele, no{" "}
-              <a
+              <AnchorHTML
                 href="https://twitter.com/JM_SCTeodoro"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-light"
               >
                 Twitter
-              </a>{" "}
+              </AnchorHTML>{" "}
               e no{" "}
-              <a
+              <AnchorHTML
                 href="https://www.instagram.com/dixperso21/?igshid=1wlnd48sxb3ft"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-light"
               >
                 Instagram
-              </a>
+              </AnchorHTML>
               .
             </p>
             <p>
               P.S. 3: o meu criador deixou meu código livre para todos poderem
               olhar. Mais informações podem ser obtidas na página de{" "}
-              <Link to="/releasenotes" className="link-light">históricos de versões.</Link>
+              <AnchorLink to="/releasenotes">históricos de versões.</AnchorLink>
             </p>
             <p>
               P.S. 4: se você gostou da ideia, considere apoiar meu criador com
@@ -198,26 +197,24 @@ function About() {
               Solteiro, Léo é cristão, que já passou por igrejas pentecostais,
               neo-pentecostais, batistas renovadas, e agora aguarda uma
               oportunidade para ficar de vez na{" "}
-              <a
+              <AnchorHTML
                 href="https://www.ieab.org.br/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-light"
               >
                 Igreja Anglicana Episcopal do Brasil
-              </a>
+              </AnchorHTML>
               .
             </p>
             <p>
               Para saber mais informações sobre ele,{" "}
-              <a
+              <AnchorHTML
                 href="https://leocarvalho.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-light"
               >
                 acesse seu site
-              </a>
+              </AnchorHTML>
               . Lá, você terá acesso a todos os contatos pessoais dele e outras
               coisas mais.
             </p>

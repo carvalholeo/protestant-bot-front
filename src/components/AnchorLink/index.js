@@ -12,7 +12,8 @@ function AnchorHTML({children, ...rest}) {
       return;
     }
     setDarkClass('');
-  }, [isDark])
+  }, [isDark]);
+
   return (
     <Link {...rest} className={rest.className + ' ' + darkClass}>{children}</Link>
   );
