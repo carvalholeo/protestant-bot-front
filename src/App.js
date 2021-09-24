@@ -5,6 +5,7 @@ import './_custom.scss'
 
 import UserProfileProvider from './contexts/UserProfileContext';
 import { OnlineOfflineContext } from './contexts/OnlineOfflineContext';
+import { DarkModeContext } from './contexts/DarkModeContext';
 import history from './services/history';
 
 import Loading from './components/Loading';
@@ -15,7 +16,9 @@ const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
   const { changeOnlineStatus } = useContext(OnlineOfflineContext);
+  const { isDark } = useContext(DarkModeContext);
   const [notification, setNotification] = useState(false);
+  const [darkMode, setDarkMode] = useState('');
   const [info, setInfo] = useState({
     title: '',
     message: '',
@@ -54,21 +57,31 @@ function App() {
     });
   }, [changeOnlineStatus]);
 
+  useEffect(() => {
+    if (isDark) {
+      setDarkMode('bg-dark text-light');
+      return;
+    }
+    setDarkMode('');
+  }, [isDark]);
+
   return (
     <Router history={history}>
-      <Suspense fallback={<Loading content="Preparando menu..." />} >
-        {notification && (
-          <NotificationToast autoHide="false" data={info}>
-            <div className="d-grid gap-2 d-md-block pt-1" style={{ zIndex: 3100 }}>
-              <button className="btn btn-dark btn-sm" type="button" data-bs-dismiss="toast" onClick={e => setNotification(false)}>Fechar</button>
-            </div>
-          </NotificationToast>
-        )}
-        <UserProfileProvider>
-          <Routes />
-          <Footer />
-        </UserProfileProvider>
-      </Suspense>
+      <div className={darkMode}>
+        <Suspense fallback={<Loading content="Preparando menu..." />} >
+          {notification && (
+            <NotificationToast autoHide="false" data={info}>
+              <div className="d-grid gap-2 d-md-block pt-1" style={{ zIndex: 3100 }}>
+                <button className="btn btn-dark btn-sm" type="button" data-bs-dismiss="toast" onClick={e => setNotification(false)}>Fechar</button>
+              </div>
+            </NotificationToast>
+          )}
+          <UserProfileProvider>
+            <Routes />
+            <Footer />
+          </UserProfileProvider>
+        </Suspense>
+      </div>
     </Router>
   );
 }
