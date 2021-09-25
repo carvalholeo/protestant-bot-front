@@ -1,0 +1,4 @@
+.markLight {
+  background-color: var(--bs-warning);
+  color: var(--bs-body-color);
+}
