@@ -23,12 +23,20 @@ function ReleaseNotes() {
           <p>Nesta página, você encontra todas as informações sobre atualizações realizadas no sistema. Mais detalhes podem ser obtidos abaixo nos títulos das seções abaixo, que levará ao acesso do código-fonte e seu histórico detalhado.</p>
           <h2><AnchorHTML href="https://github.com/carvalholeo/protestant-bot-front" target="_blank" rel="noreferrer noopener">Histórico do site/app</AnchorHTML></h2>
           <details>
+            <summary>25 de setembro de 2021</summary>
+            <ul>
+              <li>Melhoria visual da confirmação de bloqueio</li>
+            </ul>
+          </details>
+
+          <details>
             <summary>24 de setembro de 2021</summary>
             <ul>
               <li>Personalização do sistema de cores do app</li>
               <li>Inclusão de possibilidade de mudar esquema de cores</li>
             </ul>
           </details>
+
           <details>
             <summary>22 de setembro de 2021</summary>
             <ul>

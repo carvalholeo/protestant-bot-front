@@ -1,7 +1,7 @@
 import { Suspense, lazy, useEffect, useState, useContext } from 'react';
 import { Router } from 'react-router-dom';
 
-import './_custom.scss'
+import './_custom.scss';
 
 import UserProfileProvider from './contexts/UserProfileContext';
 import { OnlineOfflineContext } from './contexts/OnlineOfflineContext';
