@@ -26,6 +26,7 @@ function ReleaseNotes() {
             <summary>25 de setembro de 2021</summary>
             <ul>
               <li>Melhoria visual da confirmação de bloqueio</li>
+              <li>Melhoria visual das áreas de alerta, quando o usuário está em modo claro</li>
             </ul>
           </details>
 
