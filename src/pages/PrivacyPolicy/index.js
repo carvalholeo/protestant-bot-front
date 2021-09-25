@@ -6,6 +6,7 @@ const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
 const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
 const AnchorLink = lazy(() => import("../../components/AnchorLink"));
 const AnchorHTML = lazy(() => import("../../components/AnchorHTML"));
+const Mark = lazy(() => import("../../components/Mark"));
 
 function PrivacyPolicy() {
   return (
@@ -23,7 +24,7 @@ function PrivacyPolicy() {
           <h1>Termos e privacidade</h1>
           <p>Fico feliz que você esteja interessado em entender a parte jurídica do no programa. O código do site e do software em si, tem uma licença (uma espécie de contrato) específica. O funcionamento em si segue as regras abaixo.</p>
           <p>Tentei simplificar ao máximo os termos e cobrir a maior quantidade de casos possíveis. Mas espero que você entenda que isso é impossível. Por isso, se estiver em dúvida sobre alguma coisa nos termos de uso, por favor, me chama pra conversar.</p>
-          <p>Antes de mais nada, preciso dizer que, ao usar postar conteúdo de acordo com os critérios definidos na nossa configuração, <mark>você concorda integralmente com os termos.</mark> Se você não concorda com algo, por gentileza, <mark>NÃO USE O BOT.</mark></p>
+          <p>Antes de mais nada, preciso dizer que, ao usar postar conteúdo de acordo com os critérios definidos na nossa configuração, <Mark>você concorda integralmente com os termos.</Mark> Se você não concorda com algo, por gentileza, <Mark>NÃO USE O BOT.</Mark></p>
 
           <h2>Termos de uso</h2>
           <p>O programa, também chamado de sistema, software, robô ou bot, foi pensado para ser usado para retweetar conteúdo baseado em critérios específicos, como termos e hashtags.</p>
@@ -57,10 +58,10 @@ function PrivacyPolicy() {
             </ul>
             <li>qualquer outro conteúdo que os administradores entenderem que seja impróprio para o público do sistema, que é marjoritariamente cristão</li>
           </ul>
-          <p>O recurso de de bloquear ou desbloquear o robô deve ser usado <mark>APENAS</mark> pelo dono da conta. Ao usar, você confirma que é o dono legítimo da conta. Entenda que nós não temos como fazer uma verificação se você é quem diz ser, sem invadir na sua privacidade.</p>
+          <p>O recurso de de bloquear ou desbloquear o robô deve ser usado <Mark>APENAS</Mark> pelo dono da conta. Ao usar, você confirma que é o dono legítimo da conta. Entenda que nós não temos como fazer uma verificação se você é quem diz ser, sem invadir na sua privacidade.</p>
           <p>O software pode ser desligado a qualquer momento, sem aviso prévio. Espero que você entenda que isso não constitui prejuízo a você de qualquer forma.</p>
           <p>Embora eu tenha colocado os melhores esforços em garantir que o robô mantenha seu funcionamento contínuo, sob várias hipóteses e situações, não é possível dar qualquer garantia de que não haverão falhas. Isso quer dizer que pedidos de bloqueio ou tentativas de retwetar podem não acontecer ou mesmo entrar na fila de espera. Isso significa que, a exemplo do parágrafo anterior, você não sofrerá nenhum prejuízo e não tem nenhum direito a reembolsos sob qualquer circusntância.</p>
-          <p>Não custa lembrar que, por repostar conteúdo de acordo com uma hashtag ou marcação, os retweets são automáticos, sem revisão humana. Isso quer dizer que qualquer retweet <mark>não significa que endossamos, apoiamos ou estamos ligados ao criador de alguma forma.</mark></p>
+          <p>Não custa lembrar que, por repostar conteúdo de acordo com uma hashtag ou marcação, os retweets são automáticos, sem revisão humana. Isso quer dizer que qualquer retweet <Mark>não significa que endossamos, apoiamos ou estamos ligados ao criador de alguma forma.</Mark></p>
           <p>As dúvidas em relação a pontos controversos destes termos, devem ser enviados para mim, através de um dos <AnchorLink to='/contact'>meios de contato disponíveis.</AnchorLink></p>
 
           <h2>Política de Privacidade</h2>
@@ -91,7 +92,7 @@ function PrivacyPolicy() {
 
           <p>Em todo caso, você tem o direito de pedir que um retweet seja desfeito. O qual será realizado tão breve seja possível.</p>
           <p>Importante lembrar que o bloqueio não tem efeito para o passado, apenas para o futuro. Por exemplo, caso você peça para o bot bloquear seu usuário depois dele ter feito um retweet, somente novas mensagens não serão rewteetadas. O conteúdo antigo permance na conta do bot e precisa ser desfeita manualmente.</p>
-          <p>Outro ponto: Se sua conta estiver trancada, seus tweets <mark>NÃO</mark> passam pelo sistema. Nós só temos acesso a tweets feitos a partir de perfis públicos e, mesmo que tivéssemos acesso aos tweets privados, eles não podem ser repostados. Essa é uma regra do Twitter e nós não temos como mudar isso.</p>
+          <p>Outro ponto: Se sua conta estiver trancada, seus tweets <Mark>NÃO</Mark> passam pelo sistema. Nós só temos acesso a tweets feitos a partir de perfis públicos e, mesmo que tivéssemos acesso aos tweets privados, eles não podem ser repostados. Essa é uma regra do Twitter e nós não temos como mudar isso.</p>
           <p>De acordo com a LGPD, você deve poder ter uma forma de exercer seus direitos conosco. Para exercer esses direitos previstos na LGPD ou nesta política de privacidade, por favor, entre em contato abaixo:</p>
           <ul>
             <li>Leonardo Carvalho</li>

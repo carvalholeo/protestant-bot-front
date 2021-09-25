@@ -11,6 +11,7 @@ import { DarkModeContext } from '../../contexts/DarkModeContext';
 const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
 const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
 const NotificationToast = lazy(() => import("../../components/NotificationToast"));
+const Mark = lazy(() => import("../../components/Mark"));
 
 function BlockManager() {
   const { online } = useContext(OnlineOfflineContext);
@@ -165,7 +166,7 @@ function BlockManager() {
           {notification && (
             <NotificationToast data={apiResponse} delay="10000" />
           )}
-          <p>Esta é a parte para efetuar o <mark>bloqueio</mark> do bot na sua conta. Assim, ao perceber que um tweet pertence à você, ele é automaticamente ignorado.</p>
+          <p>Esta é a parte para efetuar o <Mark>bloqueio</Mark> do bot na sua conta. Assim, ao perceber que um tweet pertence à você, ele é automaticamente ignorado.</p>
           <form onSubmit={e => handleBlock(e)} className="row g-3">
             <div className="input-group mb-3 col-auto">
               <span className="input-group-text" id="user_block">@</span>
@@ -183,7 +184,7 @@ function BlockManager() {
 
           <hr />
           <h3>Desbloqueio</h3>
-          <p>Esta é a parte para voltar a <mark>autorizar</mark> o bot a dar RT na sua conta. Tweets feitos entre o bloqueio e o desbloqueio são ignorados.</p>
+          <p>Esta é a parte para voltar a <Mark>autorizar</Mark> o bot a dar RT na sua conta. Tweets feitos entre o bloqueio e o desbloqueio são ignorados.</p>
           <form onSubmit={e => handleUnblock(e)} className="row g-3">
             <div className="input-group mb-3 col-auto">
               <span className="input-group-text" id="user_unblock">@</span>
@@ -209,7 +210,7 @@ function BlockManager() {
               <button type="button" className={"btn-close " + buttonLight} data-bs-dismiss="modal" aria-label="Fechar"></button>
             </header>
             <main className="modal-body">
-              Você tem certeza que deseja bloquear o bot?
+              Você tem certeza que deseja <Mark>bloquear</Mark> o bot?
             </main>
             <footer className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Não, cancelar</button>
