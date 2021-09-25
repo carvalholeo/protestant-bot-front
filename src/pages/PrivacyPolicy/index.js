@@ -56,11 +56,11 @@ function PrivacyPolicy() {
               <li>negros</li>
               <li>pessoas periféricas</li>
             </ul>
-            <li>qualquer outro conteúdo que os administradores entenderem que seja impróprio para o público do sistema, que é marjoritariamente cristão</li>
+            <li>qualquer outro conteúdo que os administradores entenderem que seja impróprio para o público do sistema, que é majoritariamente cristão</li>
           </ul>
           <p>O recurso de de bloquear ou desbloquear o robô deve ser usado <Mark>APENAS</Mark> pelo dono da conta. Ao usar, você confirma que é o dono legítimo da conta. Entenda que nós não temos como fazer uma verificação se você é quem diz ser, sem invadir na sua privacidade.</p>
           <p>O software pode ser desligado a qualquer momento, sem aviso prévio. Espero que você entenda que isso não constitui prejuízo a você de qualquer forma.</p>
-          <p>Embora eu tenha colocado os melhores esforços em garantir que o robô mantenha seu funcionamento contínuo, sob várias hipóteses e situações, não é possível dar qualquer garantia de que não haverão falhas. Isso quer dizer que pedidos de bloqueio ou tentativas de retwetar podem não acontecer ou mesmo entrar na fila de espera. Isso significa que, a exemplo do parágrafo anterior, você não sofrerá nenhum prejuízo e não tem nenhum direito a reembolsos sob qualquer circusntância.</p>
+          <p>Embora eu tenha colocado os melhores esforços em garantir que o robô mantenha seu funcionamento contínuo, sob várias hipóteses e situações, não é possível dar qualquer garantia de que não haverão falhas. Isso quer dizer que pedidos de bloqueio ou tentativas de retweetar podem não acontecer ou mesmo entrar na fila de espera. Isso significa que, a exemplo do parágrafo anterior, você não sofrerá nenhum prejuízo e não tem nenhum direito a reembolsos sob qualquer circunstância.</p>
           <p>Não custa lembrar que, por repostar conteúdo de acordo com uma hashtag ou marcação, os retweets são automáticos, sem revisão humana. Isso quer dizer que qualquer retweet <Mark>não significa que endossamos, apoiamos ou estamos ligados ao criador de alguma forma.</Mark></p>
           <p>As dúvidas em relação a pontos controversos destes termos, devem ser enviados para mim, através de um dos <AnchorLink to='/contact'>meios de contato disponíveis.</AnchorLink></p>
 
@@ -91,7 +91,7 @@ function PrivacyPolicy() {
           </ul>
 
           <p>Em todo caso, você tem o direito de pedir que um retweet seja desfeito. O qual será realizado tão breve seja possível.</p>
-          <p>Importante lembrar que o bloqueio não tem efeito para o passado, apenas para o futuro. Por exemplo, caso você peça para o bot bloquear seu usuário depois dele ter feito um retweet, somente novas mensagens não serão rewteetadas. O conteúdo antigo permance na conta do bot e precisa ser desfeita manualmente.</p>
+          <p>Importante lembrar que o bloqueio não tem efeito para o passado, apenas para o futuro. Por exemplo, caso você peça para o bot bloquear seu usuário depois dele ter feito um retweet, somente novas mensagens não serão rewteetadas. O conteúdo antigo permanece na conta do bot e precisa ser desfeita manualmente.</p>
           <p>Outro ponto: Se sua conta estiver trancada, seus tweets <Mark>NÃO</Mark> passam pelo sistema. Nós só temos acesso a tweets feitos a partir de perfis públicos e, mesmo que tivéssemos acesso aos tweets privados, eles não podem ser repostados. Essa é uma regra do Twitter e nós não temos como mudar isso.</p>
           <p>De acordo com a LGPD, você deve poder ter uma forma de exercer seus direitos conosco. Para exercer esses direitos previstos na LGPD ou nesta política de privacidade, por favor, entre em contato abaixo:</p>
           <ul>
