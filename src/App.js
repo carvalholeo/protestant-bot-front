@@ -58,12 +58,17 @@ function App() {
   }, [changeOnlineStatus]);
 
   useEffect(() => {
+    const rootDark = document.querySelector('div#root');
+
     if (isDark) {
       setDarkMode('bg-dark text-light');
+      rootDark.classList.add('body-dark');
       return;
     }
     setDarkMode('');
+    rootDark.classList.remove('body-dark');
   }, [isDark]);
+
 
   return (
     <Router history={history}>
