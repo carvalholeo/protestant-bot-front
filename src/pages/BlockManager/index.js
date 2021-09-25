@@ -1,10 +1,12 @@
 import { useState, lazy, Suspense, useContext, useEffect } from 'react';
+import Modal from 'bootstrap/js/dist/modal';
 
 import apiProtestantBot from '../../services/apiProtestantBot';
 
 import Loading from "../../components/Loading";
 
 import { OnlineOfflineContext } from '../../contexts/OnlineOfflineContext';
+import { DarkModeContext } from '../../contexts/DarkModeContext';
 
 const Breadcrumb = lazy(() => import("../../components/Breadcrumb"));
 const HelmetWrapper = lazy(() => import("../../components/HelmetWrapper"));
@@ -12,6 +14,7 @@ const NotificationToast = lazy(() => import("../../components/NotificationToast"
 
 function BlockManager() {
   const { online } = useContext(OnlineOfflineContext);
+  const { isDark } = useContext(DarkModeContext);
   const [userBlock, setUserBlock] = useState('');
   const [userUnblock, setUserUnblock] = useState('');
   const [apiResponse, setApiResponse] = useState({
@@ -22,6 +25,11 @@ function BlockManager() {
   });
   const [notification, setNotification] = useState(false);
   const [className, setClassName] = useState('');
+  const [darkMode, setDarkMode] = useState('');
+  const [buttonLight, setButtonLight] = useState('btn-close');
+  const [blockConfirm, setBlockConfirm] = useState(false);
+  const [data, setData] = useState({ user: '' });
+  const [modal, setModal] = useState(() => { });
 
   useEffect(() => {
     if (online) {
@@ -31,34 +39,20 @@ function BlockManager() {
     setClassName('disabled');
   }, [online]);
 
-  function handleUser(event, block = true) {
-    const inputDirty = event.target.value;
-    const inputClean = inputDirty.replaceAll('@', '');
-
-    if (block) {
-      setUserBlock(inputClean);
-    } else {
-      setUserUnblock(inputClean);
-    }
-  }
-
-  async function handleBlock(event) {
-    event.preventDefault();
-
-    if (userBlock === '') {
-      setNotification(true);
+  useEffect(() => {
+    if (isDark) {
+      setDarkMode('bg-dark');
+      setButtonLight('btn-close-white');
       return;
     }
+    setDarkMode('');
+    setButtonLight('');
+  }, [isDark]);
 
-    const confirmation = window.confirm('Você tem certeza que deseja BLOQUEAR o bot?');
-
-    const data = {
-      user: userBlock
-    };
-
-    if (confirmation) {
+  useEffect(() => {
+    if (blockConfirm) {
       setClassName('disabled');
-      await apiProtestantBot.post('/blocklist/block', data)
+      apiProtestantBot.post('/blocklist/block', data)
         .then(() => {
           setApiResponse({
             title: "Desbloquear usuário",
@@ -79,10 +73,36 @@ function BlockManager() {
         .finally(_ => {
           setNotification(true);
           setClassName('');
+          setBlockConfirm(false);
+          modal.hide();
         });
-    } else {
-      alert('Bloqueio cancelado');
     }
+  }, [blockConfirm, userBlock, data, modal])
+
+  function handleUser(event, block = true) {
+    const inputDirty = event.target.value;
+    const inputClean = inputDirty.replaceAll('@', '');
+
+    if (block) {
+      setUserBlock(inputClean);
+    } else {
+      setUserUnblock(inputClean);
+    }
+  }
+
+  async function handleBlock(event) {
+    event.preventDefault();
+
+    if (userBlock === '') {
+      setNotification(true);
+      return;
+    }
+    const modal = document.querySelector('#modalConfirmation');
+    const myModal = new Modal(modal);
+    setModal(myModal);
+    myModal.show();
+
+    setData({ user: userBlock });
   }
 
   async function handleUnblock(event) {
@@ -93,9 +113,7 @@ function BlockManager() {
       return;
     }
 
-    const data = {
-      user: userUnblock
-    };
+    setData({ user: userUnblock });
 
     setClassName('disabled');
     await apiProtestantBot.put('/blocklist/unblock', data)
@@ -121,7 +139,6 @@ function BlockManager() {
         setClassName('');
       });
   }
-
 
   return (
     <Suspense fallback={<Loading message="Carregando dados..." />}>
@@ -183,6 +200,24 @@ function BlockManager() {
           </form>
         </div>
       </main>
+
+      <section className="modal fade " id="modalConfirmation" tabIndex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+        <div className="modal-dialog">
+          <article className={"modal-content " + darkMode}>
+            <header className="modal-header">
+              <h5 className="modal-title" id="modalTitle">Confirmação de bloqueio</h5>
+              <button type="button" className={"btn-close " + buttonLight} data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </header>
+            <main className="modal-body">
+              Você tem certeza que deseja bloquear o bot?
+            </main>
+            <footer className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Não, cancelar</button>
+              <button type="button" className={"btn btn-danger " + className} onClick={_ => setBlockConfirm(true)}>Sim, bloquear</button>
+            </footer>
+          </article>
+        </div>
+      </section>
     </Suspense>
   );
 }
