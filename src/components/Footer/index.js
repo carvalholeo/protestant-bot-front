@@ -5,13 +5,14 @@ import { DarkModeContext } from "../../contexts/DarkModeContext";
 
 import Loading from "../Loading";
 const Twemoji = lazy(() => import("react-twemoji"));
+const DarkModeToogler = lazy(() => import("../DarkModeToggler"));
 
 function Footer() {
-  const {isDark} = useContext(DarkModeContext);
+  const { isDark } = useContext(DarkModeContext);
   const [textLightClass, setTextLightClass] = useState('');
 
   useEffect(() => {
-    if(isDark) {
+    if (isDark) {
       setTextLightClass('text-light');
       return;
     }
@@ -19,7 +20,7 @@ function Footer() {
   }, [isDark]);
   return (
     <Suspense fallback={<Loading content="Montando página..." />}>
-      <footer className="footer mt-auto py-3" id="footer">
+      <footer className="footer mt-auto py-3 d-flex" id="footer">
         <Twemoji options={{ className: "emoji" }}>
           <section className="container text-center">
             <small className={textLightClass}>
@@ -28,6 +29,9 @@ function Footer() {
             </small>
           </section>
         </Twemoji>
+        <section className="ms-auto pe-3">
+          <DarkModeToogler />
+        </section>
       </footer>
     </Suspense>
   );
