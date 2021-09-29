@@ -22,6 +22,15 @@ function ReleaseNotes() {
 
           <p>Nesta página, você encontra todas as informações sobre atualizações realizadas no sistema. Mais detalhes podem ser obtidos abaixo nos títulos das seções abaixo, que levará ao acesso do código-fonte e seu histórico detalhado.</p>
           <h2><AnchorHTML href="https://github.com/carvalholeo/protestant-bot-front" target="_blank" rel="noreferrer noopener">Histórico do site/app</AnchorHTML></h2>
+
+          <details>
+            <summary>29 de setembro de 2021</summary>
+            <ul>
+              <li>Melhoria nas notificações: agora o celular vibra quando uma notificação é recebida (somente com o app aberto)</li>
+              <li>Atualizações de segurança internas</li>
+            </ul>
+          </details>
+
           <details>
             <summary>25 de setembro de 2021</summary>
             <ul>

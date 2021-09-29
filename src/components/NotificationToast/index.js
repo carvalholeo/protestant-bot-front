@@ -12,6 +12,7 @@ function NotificationToast({ data, children, autoHide = "true", delay = "5000", 
   useEffect(() => {
     if (typeof toast === 'object' && data !== {}) {
       toast.show();
+      window.navigator.vibrate(200);
     }
   }, [data, toast]);
 
