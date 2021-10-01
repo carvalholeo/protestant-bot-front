@@ -104,6 +104,15 @@ function Contact() {
       });
   }
 
+  function handleReset(event) {
+    event.preventDefault();
+    setName('');
+    setEmail('');
+    setTwitter('');
+    setMessage('');
+    setSize(2000);
+  }
+
   return (
     <Suspense fallback={<Loading message="Carregando dados..." />}>
 
@@ -126,8 +135,8 @@ function Contact() {
           {notification && (
             <NotificationToast data={apiResponse} autoHide="false" />
           )}
-          <form onSubmit={(e) => handleSubmit(e)} className="row g-2 mb-3">
-            <div className="input-group mb-3 col-auto">
+          <form onSubmit={(e) => handleSubmit(e)} onReset={e => handleReset(e)} className="row g-2 mb-3">
+            <fieldset className="input-group mb-3 col-auto">
               <label className="col-sm-2 col-form-label me-3" htmlFor="name">
                 Nome
               </label>
@@ -140,8 +149,8 @@ function Contact() {
                 onChange={(e) => handleField(e, 50, setName)}
                 value={name}
               />
-            </div>
-            <div className="input-group mb-3 col-auto">
+            </fieldset>
+            <fieldset className="input-group mb-3 col-auto">
               <label className="col-sm-2 col-form-label me-3" htmlFor="email">
                 E-mail
               </label>
@@ -154,8 +163,8 @@ function Contact() {
                 onChange={(e) => handleField(e, 100, setEmail)}
                 value={email}
               />
-            </div>
-            <div className="input-group mb-3 col-auto">
+            </fieldset>
+            <fieldset className="input-group mb-3 col-auto">
               <label className="col-sm-2 col-form-label me-3" htmlFor="twitter">
                 Usuário do Twitter
               </label>
@@ -171,8 +180,8 @@ function Contact() {
                 onChange={(e) => handleTwitter(e)}
                 value={twitter}
               />
-            </div>
-            <div className="input-group mb-3 col-auto">
+            </fieldset>
+            <fieldset className="input-group mb-3 col-auto">
               <label className="col-sm-2 col-form-label me-3" htmlFor="message">
                 Sua mensagem <span className="text-info">*</span>
               </label>
@@ -185,14 +194,14 @@ function Contact() {
                 required
                 value={message}
               ></textarea>
-            </div>
+            </fieldset>
             <p className="d-inline">{size} caractere(s) restantes.</p>
-            <div className="mb-3 col-12 justify-content-center d-flex">
+            <section className="mb-3 col-12 justify-content-center d-flex">
               <button className={"btn btn-danger col-3 me-3 " + className} type="reset">
                 Apagar tudo
               </button>
               <button className={"btn btn-success col-5 " + className}>Enviar</button>
-            </div>
+            </section>
           </form>
         </div>
       </main>
