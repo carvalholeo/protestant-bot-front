@@ -1,13 +1,9 @@
 main > .container {
-  padding-top: 80px
+  padding-top: 80px;
 }
 
 header > nav.navbar {
   border-bottom: 1.5px solid #999;
-}
-
-* {
-  scroll-behavior: smooth;
 }
 
 footer.footer {
