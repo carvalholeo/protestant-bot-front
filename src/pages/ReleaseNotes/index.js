@@ -24,6 +24,14 @@ function ReleaseNotes() {
           <h2><AnchorHTML href="https://github.com/carvalholeo/protestant-bot-front" target="_blank" rel="noreferrer noopener">Histórico do site/app</AnchorHTML></h2>
 
           <details>
+            <summary>01 de outubro de 2021</summary>
+            <ul>
+              <li>Correção de bug no formulário de contato</li>
+              <li>Redução do tamanho geral do app</li>
+            </ul>
+          </details>
+
+          <details>
             <summary>29 de setembro de 2021</summary>
             <ul>
               <li>Melhoria nas notificações: agora o celular vibra quando uma notificação é recebida (somente com o app aberto)</li>
