@@ -1,10 +1,10 @@
-@import 'app';
+@import "./app";
 
 // scss-docs-start import-stack
 // Configuration
 @import "~bootstrap/scss/functions";
 
-@import 'assets/customVariables';
+@import "./assets/customVariables";
 
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
@@ -49,6 +49,6 @@
 @import "~bootstrap/scss/utilities/api";
 // scss-docs-end import-stack
 
-@import '~bootstrap-icons/font/bootstrap-icons';
+@import "~bootstrap-icons/font/bootstrap-icons";
 
-@import 'assets/dark';
+@import "./assets/dark";
