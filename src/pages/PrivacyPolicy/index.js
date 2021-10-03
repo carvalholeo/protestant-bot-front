@@ -108,7 +108,7 @@ function PrivacyPolicy() {
             <p>O prazo de resposta é de até 10 dias úteis, considerando Feriados Nacionais, do estado de São Paulo e da cidade do Guarujá, também no estado de São Paulo.</p>
           </details>
 
-          <details>
+          <details className="mb-4">
             <summary>
               <h3 className="d-inline block">Informações legais</h3>
             </summary>

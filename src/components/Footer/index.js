@@ -20,7 +20,7 @@ function Footer() {
   }, [isDark]);
   return (
     <Suspense fallback={<Loading content="Montando página..." />}>
-      <footer className="footer mt-auto py-3 d-flex" id="footer">
+      <footer className="footer mt-auto py-3 d-flex flex-shrink-0" id="footer">
         <Twemoji options={{ className: "emoji" }}>
           <section className="container text-center">
             <small className={textLightClass}>
