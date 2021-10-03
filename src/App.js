@@ -58,21 +58,17 @@ function App() {
   }, [changeOnlineStatus]);
 
   useEffect(() => {
-    const rootDark = document.querySelector('div#root');
-
     if (isDark) {
       setDarkMode('bg-dark text-light');
-      rootDark.classList.add('body-dark');
       return;
     }
     setDarkMode('');
-    rootDark.classList.remove('body-dark');
   }, [isDark]);
 
 
   return (
     <Router history={history}>
-      <div className={darkMode}>
+      <div className={darkMode + " d-flex flex-column min-h-100"}>
         <Suspense fallback={<Loading content="Preparando menu..." />} >
           {notification && (
             <NotificationToast autoHide="false" data={info}>
