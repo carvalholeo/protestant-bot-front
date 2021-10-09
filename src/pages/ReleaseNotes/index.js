@@ -24,6 +24,17 @@ function ReleaseNotes() {
           <h2><AnchorHTML href="https://github.com/carvalholeo/protestant-bot-front" target="_blank" rel="noreferrer noopener">Histórico do site/app</AnchorHTML></h2>
 
           <details>
+            <summary>08 de outubro de 2021</summary>
+            <ul>
+              <li>Atualização interna de dependências</li>
+              <li>Correção de bug no rodapé</li>
+              <li>Termos de uso e política de privacidade agora estão como tópicos, para melhorar leitura</li>
+              <li>Novas cláusulas nos termos de uso e política de privacidade</li>
+              <li>Inclusão de lista de tecnologias usadas no app e no bot</li>
+            </ul>
+          </details>
+
+          <details>
             <summary>01 de outubro de 2021</summary>
             <ul>
               <li>Correção de bug no formulário de contato</li>
