@@ -28,6 +28,7 @@ function ReleaseNotes() {
             <ul>
               <li>Atualização interna de dependências</li>
               <li>Correção de bug no rodapé</li>
+              <li>Correção do nome da igreja do desenvolvedor do app</li>
               <li>Termos de uso e política de privacidade agora estão como tópicos, para melhorar leitura</li>
               <li>Novas cláusulas nos termos de uso e política de privacidade</li>
               <li>Inclusão de lista de tecnologias usadas no app e no bot</li>

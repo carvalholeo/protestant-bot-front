@@ -202,7 +202,7 @@ function About() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Igreja Anglicana Episcopal do Brasil
+                Igreja Episcopal Anglicana do Brasil
               </AnchorHTML>
               .
             </p>
