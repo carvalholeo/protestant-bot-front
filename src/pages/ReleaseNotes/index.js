@@ -24,6 +24,13 @@ function ReleaseNotes() {
           <h2><AnchorHTML href="https://github.com/carvalholeo/protestant-bot-front" target="_blank" rel="noreferrer noopener">Histórico do site/app</AnchorHTML></h2>
 
           <details>
+            <summary>09 de novembro de 2021</summary>
+            <ul>
+              <li>Atualização interna de dependências</li>
+            </ul>
+          </details>
+
+          <details>
             <summary>08 de outubro de 2021</summary>
             <ul>
               <li>Atualização interna de dependências</li>
@@ -154,6 +161,23 @@ function ReleaseNotes() {
           <hr />
 
           <h2><AnchorHTML href="https://github.com/carvalholeo/protestant-bot" target="_blank" rel="noreferrer noopener">Histórico do bot</AnchorHTML></h2>
+          
+          <details>
+            <summary>08 de novembro de 2021</summary>
+            <ul>
+              <li>Migração de acesso ao banco de dados</li>
+              <li>Correção de erros de acessos do sistema</li>
+              <li>Atualização de segurança de dependências</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>30 de outubro de 2021</summary>
+            <ul>
+              <li>Correção de bug ao registrar as ações tomadas pelo bot</li>
+            </ul>
+          </details>
+          
           <details>
             <summary>13 de setembro de 2021</summary>
             <ul>
