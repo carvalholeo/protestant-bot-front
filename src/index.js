@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { HelmetProvider } from "react-helmet-async";
 
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
@@ -10,7 +10,8 @@ import OnlineOfflineProvider from './contexts/OnlineOfflineContext';
 import DarkModeProvider from './contexts/DarkModeContext';
 import { analyticsActions } from './services/analytics';
 
-render(
+const root = createRoot(document.getElementById('root'));
+root.render(
   <StrictMode>
     <OnlineOfflineProvider>
       <DarkModeProvider>
@@ -19,8 +20,7 @@ render(
         </HelmetProvider>
       </DarkModeProvider>
     </OnlineOfflineProvider>
-  </StrictMode>,
-  document.getElementById('root')
+  </StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change

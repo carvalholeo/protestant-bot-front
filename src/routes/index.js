@@ -1,11 +1,9 @@
 import React from "react";
-import { Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Loading from '../components/Loading';
 
 import * as analytics from '../services/analytics';
-
-import Route from './Route';
 
 const Navbar = React.lazy(() => import("../components/Navbar"));
 const About = React.lazy(() => import("../pages/About"));
@@ -15,23 +13,23 @@ const BlockManager = React.lazy(() => import("../pages/BlockManager"));
 const Contact = React.lazy(() => import("../pages/Contact"));
 const Error404 = React.lazy(() => import("../pages/Errors/404"));
 
-function Routes() {
+function Router() {
   analytics.Analytics()
 
   return (
     <React.Suspense fallback={<Loading content="Abrindo conteúdo..." />} >
       <Navbar />
-      <Switch>
-        <Route path="/" exact component={About} />
-        <Route path="/releasenotes" component={ReleaseNotes} />
-        <Route path="/privacy" component={PrivacyPolicy} />
-        <Route path="/block-manager" component={BlockManager} />
-        <Route path="/contact" component={Contact} />
+      <Routes>
+          <Route path="/" element={ <About /> } />
+          <Route path="/releasenotes" element={ <ReleaseNotes /> } />
+          <Route path="/privacy" element={ <PrivacyPolicy /> } />
+          <Route path="/block-manager" element={ <BlockManager /> } />
+          <Route path="/contact" element={ <Contact /> } />
 
-        <Route component={Error404} />
-      </Switch>
+          <Route element={ <Error404 /> } />
+      </Routes>
     </React.Suspense>
   );
 }
 
-export default Routes;
+export default Router;

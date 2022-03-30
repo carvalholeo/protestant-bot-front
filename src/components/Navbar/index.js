@@ -45,7 +45,7 @@ function Navbar() {
             </span>
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/" exact>
+                <NavLink className="nav-link" to="/">
                   Sobre mim
                 </NavLink>
               </li>

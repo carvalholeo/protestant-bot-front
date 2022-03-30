@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect, useState, useContext } from 'react';
-import { Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import './_custom.scss';
 
@@ -67,7 +67,7 @@ function App() {
 
 
   return (
-    <Router history={history}>
+    <BrowserRouter history={history}>
       <div className={darkMode + " d-flex flex-column min-h-100"}>
         <Suspense fallback={<Loading content="Preparando menu..." />} >
           {notification && (
@@ -83,7 +83,7 @@ function App() {
           </UserProfileProvider>
         </Suspense>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
