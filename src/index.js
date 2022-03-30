@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import { hydrateRoot } from 'react-dom/client';
 import { HelmetProvider } from "react-helmet-async";
 
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
@@ -10,8 +10,7 @@ import OnlineOfflineProvider from './contexts/OnlineOfflineContext';
 import DarkModeProvider from './contexts/DarkModeContext';
 import { analyticsActions } from './services/analytics';
 
-const root = createRoot(document.getElementById('root'));
-root.render(
+hydrateRoot(document.getElementById('root'),
   <StrictMode>
     <OnlineOfflineProvider>
       <DarkModeProvider>
