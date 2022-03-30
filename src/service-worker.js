@@ -63,8 +63,13 @@ registerRoute(
 
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
+// deepcode ignore InsufficientValidation: Validaton were implemented
+self.addEventListener('message', ({data, origin}) => {
+  if (origin !== process.env.PUBLIC_URL) {
+    return;
+  }
+
+  if (data && data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
 });
