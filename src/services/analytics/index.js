@@ -1,8 +1,6 @@
 import * as ackeeTracker from 'ackee-tracker';
-import useAckee from 'use-ackee';
 
 const SERVER = process.env.REACT_APP_ANALYTICS_SERVER;
-const DOMAIN_ID = process.env.REACT_APP_ANALYTICS_ID;
 
 const OPTIONS = {
   detailed: true,
@@ -35,14 +33,6 @@ function trackerFunction() {
 }
 
 export const trackerExecution = trackerFunction();
-
-export function Analytics() {
-  const history = `${document.location.pathname}${document.location.hash}`;
-  useAckee(history, {
-    domainId: DOMAIN_ID,
-    server: SERVER
-  }, OPTIONS);
-}
 
 export function analyticsActions({ name, value }) {
   const action = WEB_VITALS[name];
