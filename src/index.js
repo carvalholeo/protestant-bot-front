@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import { hydrateRoot } from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import { HelmetProvider } from "react-helmet-async";
 
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
@@ -10,17 +10,18 @@ import OnlineOfflineProvider from './contexts/OnlineOfflineContext';
 import DarkModeProvider from './contexts/DarkModeContext';
 import { analyticsActions } from './services/analytics';
 
-hydrateRoot(document.getElementById('root'),
-  <StrictMode>
-    <OnlineOfflineProvider>
-      <DarkModeProvider>
-        <HelmetProvider>
-          <App />
-        </HelmetProvider>
-      </DarkModeProvider>
-    </OnlineOfflineProvider>
-  </StrictMode>
-);
+createRoot(document.getElementById('root'))
+  .render(
+    <StrictMode>
+      <OnlineOfflineProvider>
+          <DarkModeProvider>
+            <HelmetProvider>
+              <App />
+            </HelmetProvider>
+          </DarkModeProvider>
+      </OnlineOfflineProvider>
+    </StrictMode>
+  )
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
