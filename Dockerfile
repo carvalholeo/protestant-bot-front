@@ -1,7 +1,7 @@
 FROM node:16.17.1-alpine3.16 as build
 WORKDIR /usr/app
 COPY . /usr/app
-RUN yarn install
+RUN yarn install && npx browserslist@latest --update-db
 RUN yarn build
 
 FROM nginx:1.23.1-alpine
