@@ -1,6 +1,5 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
-import useAckee from "use-ackee";
+import { Routes, Route } from "react-router-dom";
 
 import Loading from '../components/Loading';
 
@@ -13,17 +12,6 @@ const Contact = React.lazy(() => import("../pages/Contact"));
 const Error404 = React.lazy(() => import("../pages/Errors/404"));
 
 function Router() {
-  const { pathname } = useLocation();
-
-  useAckee(pathname, {
-    domainId: process.env.REACT_APP_ANALYTICS_ID,
-    server: process.env.REACT_APP_ANALYTICS_SERVER
-  }, {
-    detailed: true,
-    ignoreLocalhost: true,
-    ignoreOwnVisits: true
-  });
-
   return (
     <React.Suspense fallback={<Loading content="Abrindo conteúdo..." />} >
       <Navbar />

@@ -1,46 +1,35 @@
-import * as ackeeTracker from 'ackee-tracker';
-
-const SERVER = process.env.REACT_APP_ANALYTICS_SERVER;
+import Plausible from "plausible-tracker";
 
 const OPTIONS = {
-  detailed: true,
-  ignoreLocalhost: true,
-  ignoreOwnVisits: false
-}
-
-const WEB_VITALS = {
-  CLS: 'Cumulative Layout Shift',
-  LCP: 'Largest Contentful Paint',
-  TTFB: 'Time to Transfer First Byte',
-  FCP: 'First Contentful Paint',
-  FID: 'First Input Delay',
-  TTI: 'Time to Interactive',
-  TBT: 'Total Blocking Time'
+  domain: "protestantbot.leocarvalho.dev",
+  trackLocalhost: false,
+  apiHost: process.env.REACT_APP_ANALYTICS_SERVER,
+  trackOutboundLinks: true,
 };
 
-const EVENT_ID = {
-  CLS: process.env.REACT_APP_EVENT_CLS,
-  LCP: process.env.REACT_APP_EVENT_LCP,
-  TTFB: process.env.REACT_APP_EVENT_TTFB,
-  FCP: process.env.REACT_APP_EVENT_FCP,
-  FID: process.env.REACT_APP_EVENT_FID,
-  TTI: process.env.REACT_APP_EVENT_TTI,
-  TBT: process.env.REACT_APP_EVENT_TBT
-}
+const plausible = Plausible(OPTIONS);
+
+const WEB_VITALS = {
+  CLS: "Cumulative Layout Shift",
+  LCP: "Largest Contentful Paint",
+  TTFB: "Time to Transfer First Byte",
+  FCP: "First Contentful Paint",
+  FID: "First Input Delay",
+  TTI: "Time to Interactive",
+  TBT: "Total Blocking Time",
+  INP: "Interaction to next Paint",
+};
 
 function trackerFunction() {
-  return ackeeTracker.create(SERVER, OPTIONS);
+  plausible.enableAutoPageviews();
 }
 
 export const trackerExecution = trackerFunction();
 
 export function analyticsActions({ name, value }) {
-  const action = WEB_VITALS[name];
-  const id = EVENT_ID[name];
-  const tracker = trackerExecution;
+  const event = WEB_VITALS[name];
 
-  tracker.action(id, {
-    key: action,
-    value: value
-  });
+  console.log(event, value);
+
+  plausible.trackEvent(event, { props: { value } });
 }
