@@ -24,6 +24,13 @@ function ReleaseNotes() {
           <h2><AnchorHTML href="https://github.com/carvalholeo/protestant-bot-front" target="_blank" rel="noreferrer noopener">Histórico do site/app</AnchorHTML></h2>
 
           <details>
+            <summary><mark>06 de maio de 2023</mark></summary>
+            <ul>
+              <li>Encerramento das atividades e publicação de nota oficial sobre o tema</li>
+            </ul>
+          </details>
+
+          <details>
             <summary>09 de novembro de 2021</summary>
             <ul>
               <li>Atualização interna de dependências</li>
@@ -161,7 +168,14 @@ function ReleaseNotes() {
           <hr />
 
           <h2><AnchorHTML href="https://github.com/carvalholeo/protestant-bot" target="_blank" rel="noreferrer noopener">Histórico do bot</AnchorHTML></h2>
-          
+
+          <details>
+            <summary><mark>06 de maio de 2023</mark></summary>
+            <ul>
+              <li>Encerramento das atividades e publicação de nota oficial sobre o tema</li>
+            </ul>
+          </details>
+
           <details>
             <summary>08 de novembro de 2021</summary>
             <ul>

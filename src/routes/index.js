@@ -7,8 +7,6 @@ const Navbar = React.lazy(() => import("../components/Navbar"));
 const About = React.lazy(() => import("../pages/About"));
 const PrivacyPolicy = React.lazy(() => import("../pages/PrivacyPolicy"));
 const ReleaseNotes = React.lazy(() => import("../pages/ReleaseNotes"));
-const BlockManager = React.lazy(() => import("../pages/BlockManager"));
-const Contact = React.lazy(() => import("../pages/Contact"));
 const Error404 = React.lazy(() => import("../pages/Errors/404"));
 
 function Router() {
@@ -19,10 +17,8 @@ function Router() {
           <Route path="/" element={ <About /> } />
           <Route path="/releasenotes" element={ <ReleaseNotes /> } />
           <Route path="/privacy" element={ <PrivacyPolicy /> } />
-          <Route path="/block-manager" element={ <BlockManager /> } />
-          <Route path="/contact" element={ <Contact /> } />
 
-          <Route element={ <Error404 /> } />
+          <Route path="*" element={ <Error404 /> } />
       </Routes>
     </React.Suspense>
   );
