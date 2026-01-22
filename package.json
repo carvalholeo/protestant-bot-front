@@ -61,7 +61,7 @@
     "@testing-library/user-event": "^14.2.0",
     "css-loader": "^6.7.3",
     "postcss-custom-properties": "^12.1.11",
-    "postcss-loader": "^7.0.2",
+    "postcss-loader": "^7.1.0",
     "prop-types": "^15.8.1",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",
